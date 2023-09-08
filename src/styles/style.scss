@@ -1,0 +1,237 @@
+@import url("https://use.typekit.net/xcf6hfx.css");
+@import url("https://use.typekit.net/xcf6hfx.css");
+
+$secondary-header-space: 1rem;
+
+$color-palette :(
+  'primary-color': 222.78 71.43% 31.57%,
+  'secondary-color': 0 0% 80%,
+  'accent-color': 0 0% 100%,
+  'black': 100 100% 0
+);
+
+$font-families: (
+        'secondary-font': "Oswald, sans-serif",
+        'secondary-font-med': "Oswald Medium, sans-serif",
+
+        'primary-font-extended': "PT Serif Pro Extended, sans-serif"
+);
+
+$font-sizes: (
+        'light': 1.75rem,
+        'small': 2rem,
+        'medium': 3rem,
+        'large': 4.5rem
+
+);
+$font-weights: (
+        'light': 300,
+        'normal': 400,
+        'bold': 700
+);
+@mixin create-color-variables{
+  @each $name, $color in $color-palette{
+    --color-#{$name}: #{$color};
+  }
+}
+@mixin create-font-variables {
+  // Font Sizes
+  @each $name, $size in $font-sizes {
+    --font-size-#{$name}: #{$size};
+  }
+
+  // Font Weights
+  @each $name, $weight in $font-weights {
+    --font-weight-#{$name}: #{$weight};
+  }
+
+  // Font Families
+  @each $name, $family in $font-families {
+    --font-family-#{$name}: #{$family};
+  }
+}
+
+:root{
+@include create-font-variables;
+}
+
+
+body{
+
+  display: block;
+  position: relative;
+  background-color: inherit;
+  z-index: 2;
+}
+body::before{
+  content: '';
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  z-index: -1;
+
+  background-size: cover;
+  background: url("/public/background.jpg") center center;
+
+}
+.wrapper{
+  display: flex;
+  flex-flow: column nowrap;
+  width: 100%;
+  margin: 0 auto;
+
+}
+header{
+  display: flex;
+  flex-flow: row nowrap;
+  min-height: 5rem;
+  width: 94%;
+  align-self: center;
+  align-items: center;
+  padding-block: 1.75rem;
+  .brand{
+    display: block;
+    height: 6rem;
+    img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  .email{
+    display: flex;
+    font-size: var(--font-size-light);
+    font-family: var(--font-family-primary-font-extended);
+    margin-left: 2rem;
+    width: auto;
+    a{
+      display: block;
+      position: relative;
+      text-decoration: none;
+      color: $black;
+
+      :visited{
+        color: $black
+      }
+      &:hover:before{
+        content: '';
+        height: .2rem;
+        width: 100%;
+        display: block;
+        position: absolute;
+        top: 100%;
+        background-color: #17388a;
+      }
+      }
+    }
+
+  }
+
+
+nav{
+  display: flex;
+  flex-flow: row nowrap;
+  flex: 1;
+  width: auto;
+  justify-content: end;
+  ul{
+    display: inline-flex;
+    width: auto;
+    gap: 3rem;
+    .nav-item{
+      display: flex;
+      padding: .25rem 2rem;
+      border-radius: 50vh;
+      &:hover{
+        background-color: hsl($primary-color);
+        .nav-link{
+          color: white;
+        }
+      }
+      .nav-link{
+        color: hsl($black);
+        text-decoration: none;
+        font-family: var(--font-family-secondary-font);
+        font-weight: var(--font-weight-700);
+        letter-spacing: 0.25ch;
+      }
+    }
+  }
+}
+.active{
+  background-color: hsl($primary-color);
+  .nav-link{
+    color: white !important;
+  }
+}
+
+.intro {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  width: 100%;
+  position: relative;
+  .dev-bg {
+    position: absolute;
+    display: block;
+    align-self: center;
+    z-index: -1;
+    opacity: .2;
+    width: 85%;
+    height: 85%;
+  }
+
+  .info {
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    gap: 10rem;
+    h1{
+      align-self: center;
+      justify-content: center;
+      font-size: clamp(var(--font-size-medium),5.5vw,var(--font-size-large));
+      font-family: var(--font-family-primary-font-extended);
+      white-space: nowrap;
+    }
+    p{
+      align-self: center;
+      justify-content: center;
+      font-size: clamp(var(--font-size-light),2vw,var(--font-size-small));
+      font-family: var(--font-family-primary-font-extended);
+      white-space: nowrap;
+      margin: 0 15rem;
+    }
+
+    .decorator{
+      height: 2rem;
+      background-color: #17388a;
+      align-self: center;
+      border-radius: 50vh;
+    }
+    .left{
+      border-bottom-left-radius: 0;
+      border-top-left-radius:0 ;
+    }
+    .right{
+      border-bottom-right-radius: 0;
+      border-top-right-radius:0 ;
+    }
+
+
+  }
+}
+
+
+
+
+
+
+
+
+

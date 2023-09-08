@@ -1,0 +1,11 @@
+---
+import TopNavigation from "./Top-Navigation.astro";
+import brandImg from '../../public/oi-logo.webp';
+import { Image } from "astro:assets";
+
+---
+<header>
+    <div class="brand"><Image src={ brandImg } alt="Brand Logo"/></div>
+    <div class="email"><a href="mailto:georgegoldsmithweb@gmail.com">georgegoldsmithweb@gmail.com</a></div>
+    <TopNavigation/>
+</header>

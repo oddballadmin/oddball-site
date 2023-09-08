@@ -1,4 +1,10 @@
 ---
+import '../styles/style.css';
+import '../styles/reset.css';
+import Header from "../layouts/Header.astro";
+import { Image } from "astro:assets";
+import devImg from '../../public/developer.svg';
+
 ---
 
 <html lang="en">
@@ -10,6 +16,29 @@
 		<title>Astro</title>
 	</head>
 	<body>
-		<h1>Astro</h1>
+	<div class="wrapper">
+		<Header/>
+
+		<section class="intro">
+			<Image src={devImg} alt="dev at work" class="dev-bg"/>
+
+			<div class="info">
+				<span class="decorator left"></span>
+				<h1>George Goldsmith</h1>
+				<span class="decorator right"></span>
+			</div>
+			<div class="info">
+				<span class="decorator left"></span>
+				<p>Web / Software developer (Fullstack)
+				<br>B.A. Information Systems Technology
+				</p>
+				<span class="decorator right"></span>
+			</div>
+			<small><a href="https://www.github.com" target="_blank">View My Github Repo</a></small>
+
+		</section>
+
+
+	</div>
 	</body>
 </html>
