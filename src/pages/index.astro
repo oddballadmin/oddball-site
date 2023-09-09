@@ -3,7 +3,9 @@ import '../styles/style.css';
 import '../styles/reset.css';
 import Header from "../layouts/Header.astro";
 import { Image } from "astro:assets";
-import devImg from '../../public/developer.svg';
+import Bio from "../layouts/Bio.astro";
+import SkillList from "../layouts/SkillList.astro";
+import SkillItem from "../layouts/SkillItem.astro";
 
 ---
 
@@ -18,27 +20,7 @@ import devImg from '../../public/developer.svg';
 	<body>
 	<div class="wrapper">
 		<Header/>
-
-		<section class="intro">
-			<Image src={devImg} alt="dev at work" class="dev-bg"/>
-
-			<div class="info">
-				<span class="decorator left"></span>
-				<h1>George Goldsmith</h1>
-				<span class="decorator right"></span>
-			</div>
-			<div class="info">
-				<span class="decorator left"></span>
-				<p>Web / Software developer (Fullstack)
-				<br>B.A. Information Systems Technology
-				</p>
-				<span class="decorator right"></span>
-			</div>
-			<small><a href="https://www.github.com" target="_blank">View My Github Repo</a></small>
-
-		</section>
-
-
+		<Bio/>
 	</div>
 	</body>
 </html>

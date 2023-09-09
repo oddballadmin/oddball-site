@@ -7,7 +7,7 @@ $color-palette :(
   'primary-color': 222.78 71.43% 31.57%,
   'secondary-color': 0 0% 80%,
   'accent-color': 0 0% 100%,
-  'black': 100 100% 0
+  'lightblack': 100 100% 0
 );
 
 $font-families: (
@@ -53,35 +53,36 @@ $font-weights: (
 
 :root{
 @include create-font-variables;
+@include create-color-variables;
+
 }
 
 
 body{
 
   display: block;
+  font-family: var(--font-family-primary-font-extended);
   position: relative;
   background-color: inherit;
   z-index: 2;
+  aspect-ratio: 1;
 }
 body::before{
   content: '';
   display: block;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
+  position: fixed;
+  min-width: 100%;
+  min-height: 100%;
   z-index: -1;
 
   background-size: cover;
-  background: url("/public/background.jpg") center center;
+  background: url("/public/background.jpg") center center no-repeat;
 
 }
 .wrapper{
   display: flex;
   flex-flow: column nowrap;
   width: 100%;
-  margin: 0 auto;
-
 }
 header{
   display: flex;
@@ -110,10 +111,10 @@ header{
       display: block;
       position: relative;
       text-decoration: none;
-      color: $black;
+      color: hsl(var(--color-lightblack));
 
       :visited{
-        color: $black
+        color: var(--color-lightblack)
       }
       &:hover:before{
         content: '';
@@ -145,23 +146,23 @@ nav{
       padding: .25rem 2rem;
       border-radius: 50vh;
       &:hover{
-        background-color: hsl($primary-color);
+        background-color: hsl(var(--color-primary-color));
         .nav-link{
           color: white;
         }
       }
       .nav-link{
-        color: hsl($black);
+        color: hsl(var(--color-lightblack));
         text-decoration: none;
         font-family: var(--font-family-secondary-font);
         font-weight: var(--font-weight-700);
-        letter-spacing: 0.25ch;
+        letter-spacing: 0.20ch;
       }
     }
   }
 }
 .active{
-  background-color: hsl($primary-color);
+  background-color: hsl(var(--color-primary-color));
   .nav-link{
     color: white !important;
   }
@@ -172,7 +173,7 @@ nav{
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
-  min-height: 80vh;
+  min-height: 70vh;
   width: 100%;
   position: relative;
   .dev-bg {
@@ -198,6 +199,7 @@ nav{
       font-size: clamp(var(--font-size-medium),5.5vw,var(--font-size-large));
       font-family: var(--font-family-primary-font-extended);
       white-space: nowrap;
+      letter-spacing: .5rem;
     }
     p{
       align-self: center;
@@ -222,10 +224,62 @@ nav{
       border-bottom-right-radius: 0;
       border-top-right-radius:0 ;
     }
-
+  }
+.git-link{
+  margin: 1rem;
+  padding: 1rem 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 15px 20px 35px 17px rgba(0,0,0,0.1);
+  background-color: #17388a;
+  width: auto;
+  height: auto;
+  &:focus{
+    box-shadow: 0 0 0 0 rgba(0,0,0,0.1);
 
   }
+  a{
+    color: hsl(var(--color-accent-color));
+    text-decoration: none;
+    &:visited{
+      color: hsl(var(--color-accent-color));
+    }
+  }
 }
+}
+.skill-title{
+  position: relative;
+  font-family: var(--font-family-secondary-font);
+  &::after,&::before{
+    display: block;
+    content: '';
+    position: absolute;
+    height: .5rem;
+    width: 100%;
+    background-color: #17388a;
+  }
+  &::after{
+    bottom: 100%;
+
+  }
+  &::before{
+    top: 100%;
+  }
+}
+.skill-element[data-astro-cid-g25dotfx]{
+    &:hover{
+      visibility: hidden;
+      .skill-title{
+       visibility: visible;
+      }
+  }
+  &:focus {
+    visibility: hidden;
+
+    .skill-title {
+      visibility: visible;
+    }
+
+  }}
 
 
 

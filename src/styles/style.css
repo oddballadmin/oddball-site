@@ -1,17 +1,236 @@
-/* Error: Undefined variable.
- *     ,
- * 113 |       color: $black;
- *     |              ^^^^^^
- *     '
- *   style.scss 113:14  root stylesheet */
+@import url("https://use.typekit.net/xcf6hfx.css");
+@import url("https://use.typekit.net/xcf6hfx.css");
+:root {
+  --font-size-light: 1.75rem;
+  --font-size-small: 2rem;
+  --font-size-medium: 3rem;
+  --font-size-large: 4.5rem;
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-bold: 700;
+  --font-family-secondary-font: Oswald, sans-serif;
+  --font-family-secondary-font-med: Oswald Medium, sans-serif;
+  --font-family-primary-font-extended: PT Serif Pro Extended, sans-serif;
+  --color-primary-color: 222.78 71.43% 31.57%;
+  --color-secondary-color: 0 0% 80%;
+  --color-accent-color: 0 0% 100%;
+  --color-lightblack: 100 100% 0;
+}
+
+body {
+  display: block;
+  font-family: var(--font-family-primary-font-extended);
+  position: relative;
+  background-color: inherit;
+  z-index: 2;
+  aspect-ratio: 1;
+}
 
 body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
+  content: "";
   display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Undefined variable.\a     \2577 \a 113 \2502        color: $black;\d\a     \2502               ^^^^^^\a     \2575 \a   style.scss 113:14  root stylesheet";
+  position: fixed;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+  background-size: cover;
+  background: url("/public/background.jpg") center center no-repeat;
 }
+
+.wrapper {
+  display: flex;
+  flex-flow: column nowrap;
+  width: 100%;
+}
+
+header {
+  display: flex;
+  flex-flow: row nowrap;
+  min-height: 5rem;
+  width: 94%;
+  align-self: center;
+  align-items: center;
+  padding-block: 1.75rem;
+}
+header .brand {
+  display: block;
+  height: 6rem;
+}
+header .brand img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+header .email {
+  display: flex;
+  font-size: var(--font-size-light);
+  font-family: var(--font-family-primary-font-extended);
+  margin-left: 2rem;
+  width: auto;
+}
+header .email a {
+  display: block;
+  position: relative;
+  text-decoration: none;
+  color: hsl(var(--color-lightblack));
+}
+header .email a :visited {
+  color: var(--color-lightblack);
+}
+header .email a:hover:before {
+  content: "";
+  height: 0.2rem;
+  width: 100%;
+  display: block;
+  position: absolute;
+  top: 100%;
+  background-color: #17388a;
+}
+
+nav {
+  display: flex;
+  flex-flow: row nowrap;
+  flex: 1;
+  width: auto;
+  justify-content: end;
+}
+nav ul {
+  display: inline-flex;
+  width: auto;
+  gap: 3rem;
+}
+nav ul .nav-item {
+  display: flex;
+  padding: 0.25rem 2rem;
+  border-radius: 50vh;
+}
+nav ul .nav-item:hover {
+  background-color: hsl(var(--color-primary-color));
+}
+nav ul .nav-item:hover .nav-link {
+  color: white;
+}
+nav ul .nav-item .nav-link {
+  color: hsl(var(--color-lightblack));
+  text-decoration: none;
+  font-family: var(--font-family-secondary-font);
+  font-weight: var(--font-weight-700);
+  letter-spacing: 0.2ch;
+}
+
+.active {
+  background-color: hsl(var(--color-primary-color));
+}
+.active .nav-link {
+  color: white !important;
+}
+
+.intro {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh;
+  width: 100%;
+  position: relative;
+}
+.intro .dev-bg {
+  position: absolute;
+  display: block;
+  align-self: center;
+  z-index: -1;
+  opacity: 0.2;
+  width: 85%;
+  height: 85%;
+}
+.intro .info {
+  display: grid;
+  grid-template-columns: 2fr 1fr 2fr;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  gap: 10rem;
+}
+.intro .info h1 {
+  align-self: center;
+  justify-content: center;
+  font-size: clamp(var(--font-size-medium), 5.5vw, var(--font-size-large));
+  font-family: var(--font-family-primary-font-extended);
+  white-space: nowrap;
+  letter-spacing: 0.5rem;
+}
+.intro .info p {
+  align-self: center;
+  justify-content: center;
+  font-size: clamp(var(--font-size-light), 2vw, var(--font-size-small));
+  font-family: var(--font-family-primary-font-extended);
+  white-space: nowrap;
+  margin: 0 15rem;
+}
+.intro .info .decorator {
+  height: 2rem;
+  background-color: #17388a;
+  align-self: center;
+  border-radius: 50vh;
+}
+.intro .info .left {
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
+.intro .info .right {
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+}
+.intro .git-link {
+  margin: 1rem;
+  padding: 1rem 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 15px 20px 35px 17px rgba(0, 0, 0, 0.1);
+  background-color: #17388a;
+  width: auto;
+  height: auto;
+}
+.intro .git-link:focus {
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.1);
+}
+.intro .git-link a {
+  color: hsl(var(--color-accent-color));
+  text-decoration: none;
+}
+.intro .git-link a:visited {
+  color: hsl(var(--color-accent-color));
+}
+
+.skill-title {
+  position: relative;
+  font-family: var(--font-family-secondary-font);
+}
+.skill-title::after, .skill-title::before {
+  display: block;
+  content: "";
+  position: absolute;
+  height: 0.5rem;
+  width: 100%;
+  background-color: #17388a;
+}
+.skill-title::after {
+  bottom: 100%;
+}
+.skill-title::before {
+  top: 100%;
+}
+
+.skill-element[data-astro-cid-g25dotfx]:hover {
+  visibility: hidden;
+}
+.skill-element[data-astro-cid-g25dotfx]:hover .skill-title {
+  visibility: visible;
+}
+.skill-element[data-astro-cid-g25dotfx]:focus {
+  visibility: hidden;
+}
+.skill-element[data-astro-cid-g25dotfx]:focus .skill-title {
+  visibility: visible;
+}
+
+/*# sourceMappingURL=style.css.map */

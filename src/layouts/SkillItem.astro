@@ -1,0 +1,38 @@
+---
+import { Icon } from "astro-icon";
+const { skill,desc,iconName } = Astro.props;
+---
+<div class="skill-element">
+    <Icon name={iconName} class="icon"/>
+    <div class="skill-title">{skill}</div>
+</div>
+<style>
+    .skill-element{
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        text-align: center;
+        width: clamp(4em,5vw,8em);
+        gap: .5rem;
+        position: relative;
+        padding: 1rem;
+
+
+    }
+
+    .skill-title{
+        visibility: hidden;
+        position: absolute;
+        top: 45%;
+    }
+
+
+    .icon{
+        margin: auto;
+        height: auto;
+        max-width: 5rem;
+
+    }
+
+</style>
+

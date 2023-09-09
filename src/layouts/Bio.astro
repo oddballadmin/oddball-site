@@ -1,0 +1,36 @@
+---
+import { Image } from "astro:assets";
+import devImg from "../../public/developer.svg";
+import SkillItem from "./SkillItem.astro";
+import SkillList from "./SkillList.astro";
+---
+<section class="intro">
+    <Image src={devImg} alt="dev at work" class="dev-bg"/>
+
+    <div class="info">
+        <span class="decorator left"></span>
+        <h1>George Goldsmith</h1>
+        <span class="decorator right"></span>
+    </div>
+    <div class="info">
+        <span class="decorator left"></span>
+        <p>Web / Software developer (Fullstack)
+            <br>BAS Information Systems Technology
+        </p>
+        <span class="decorator right"></span>
+    </div>
+    <small class="git-link"> <a href="https://www.github.com" target="_blank">View My Github Repo</a></small>
+</section>
+<SkillList>
+    <SkillItem skill="HTML" iconName="vscode-icons:file-type-html"/>
+    <SkillItem skill="JS" iconName="vscode-icons:file-type-light-js"/>
+    <SkillItem skill="CSS" iconName="vscode-icons:file-type-css"/>
+    <SkillItem skill="Astro" iconName="vscode-icons:file-type-astro"/>
+    <SkillItem skill="Wordpress" iconName="brandico:wordpress"/>
+    <SkillItem skill="Customer Service" iconName="ri:customer-service-fill"/>
+    <SkillItem skill="Java" iconName="logos:java"/>
+    <SkillItem skill="MySQL" iconName="logos:mysql"/>
+    <SkillItem skill="NodeJS" iconName="logos:nodejs"/>
+    <SkillItem skill="PHP" iconName="logos:php"/>
+    <SkillItem skill="API Integration" iconName="logos:postman-icon"/>
+</SkillList>
