@@ -2,8 +2,8 @@
 @import url("https://use.typekit.net/xcf6hfx.css");
 :root {
   --font-size-light: 1.75rem;
-  --font-size-small: 2rem;
-  --font-size-medium: 3rem;
+  --font-size-small: 2.5rem;
+  --font-size-medium: 3.5rem;
   --font-size-large: 4.5rem;
   --font-weight-light: 300;
   --font-weight-normal: 400;
@@ -18,73 +18,55 @@
 }
 
 body {
-  display: block;
   font-family: var(--font-family-primary-font-extended);
   position: relative;
   background-color: inherit;
   z-index: 2;
-  aspect-ratio: 1;
+  height: 100%;
+  width: 100%;
 }
 
 body::before {
   content: "";
-  display: block;
-  position: fixed;
-  min-width: 100%;
-  min-height: 100%;
+  position: absolute;
+  height: 100%;
+  width: 100%;
   z-index: -1;
+  background-image: url("/public/background.jpg");
   background-size: cover;
-  background: url("/public/background.jpg") center center no-repeat;
+  background-repeat: no-repeat;
+  scale: 1/1;
 }
 
 .wrapper {
+  width: 100%;
   display: flex;
   flex-flow: column nowrap;
-  width: 100%;
+}
+
+.container {
+  width: 96%;
+  align-self: center;
+  margin: 0 auto;
 }
 
 header {
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: row wrap;
   min-height: 5rem;
-  width: 94%;
+  width: 95%;
   align-self: center;
   align-items: center;
   padding-block: 1.75rem;
 }
 header .brand {
   display: block;
-  height: 6rem;
+  height: 6em;
 }
 header .brand img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
-header .email {
-  display: flex;
-  font-size: var(--font-size-light);
-  font-family: var(--font-family-primary-font-extended);
-  margin-left: 2rem;
-  width: auto;
-}
-header .email a {
-  display: block;
-  position: relative;
-  text-decoration: none;
-  color: hsl(var(--color-lightblack));
-}
-header .email a :visited {
-  color: var(--color-lightblack);
-}
-header .email a:hover:before {
-  content: "";
-  height: 0.2rem;
-  width: 100%;
-  display: block;
-  position: absolute;
-  top: 100%;
-  background-color: #17388a;
 }
 
 nav {
@@ -130,7 +112,7 @@ nav ul .nav-item .nav-link {
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
-  min-height: 70vh;
+  min-height: 95vh;
   width: 100%;
   position: relative;
 }
@@ -189,6 +171,7 @@ nav ul .nav-item .nav-link {
   background-color: #17388a;
   width: auto;
   height: auto;
+  font-size: 1em;
 }
 .intro .git-link:focus {
   box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.1);
@@ -199,6 +182,10 @@ nav ul .nav-item .nav-link {
 }
 .intro .git-link a:visited {
   color: hsl(var(--color-accent-color));
+}
+
+.skill-element:hover .skill-title {
+  visibility: visible;
 }
 
 .skill-title {
@@ -220,17 +207,42 @@ nav ul .nav-item .nav-link {
   top: 100%;
 }
 
-.skill-element[data-astro-cid-g25dotfx]:hover {
-  visibility: hidden;
+.about-me {
+  display: flex;
+  flex-flow: column wrap;
+  min-height: 100vh;
 }
-.skill-element[data-astro-cid-g25dotfx]:hover .skill-title {
-  visibility: visible;
+.about-me h1, .about-me h2 {
+  font-family: var(--font-family-secondary-font);
+  padding: 0.5rem 0;
 }
-.skill-element[data-astro-cid-g25dotfx]:focus {
-  visibility: hidden;
+.about-me .excerpt {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-start;
+  width: 100%;
 }
-.skill-element[data-astro-cid-g25dotfx]:focus .skill-title {
-  visibility: visible;
+.about-me .excerpt p {
+  font-size: clamp(1.5rem, 1.5vw, var(--font-size-small));
+}
+.about-me .sect-heading {
+  display: flex;
+  flex-flow: column nowrap;
+  line-height: 1.75em;
+  margin: 0;
+  padding: 1.5rem 0;
+  font-family: var(--font-family-primary-font-extended);
+  letter-spacing: 0.2rem;
+}
+.about-me .sect-heading h2 {
+  font-size: clamp(2.75rem, 3vw, 3.5rem);
+  padding: 0;
+  margin: 0;
+}
+.about-me .sect-heading .sub-head {
+  font-size: clamp(1.65rem, 1.5vw, 2rem);
+  font-family: var(--font-family-secondary-font);
+  font-weight: 200;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,9 +1,11 @@
 ---
 import { Image } from "astro:assets";
 import devImg from "../../public/developer.svg";
-import SkillItem from "./SkillItem.astro";
-import SkillList from "./SkillList.astro";
+import SkillItem from "./utils/SkillItem.astro";
+import SkillList from "./utils/SkillList.astro";
+import SectionHeader from "./utils/SectionHeader.astro";
 ---
+
 <section class="intro">
     <Image src={devImg} alt="dev at work" class="dev-bg"/>
 
@@ -21,16 +23,52 @@ import SkillList from "./SkillList.astro";
     </div>
     <small class="git-link"> <a href="https://www.github.com" target="_blank">View My Github Repo</a></small>
 </section>
-<SkillList>
-    <SkillItem skill="HTML" iconName="vscode-icons:file-type-html"/>
-    <SkillItem skill="JS" iconName="vscode-icons:file-type-light-js"/>
-    <SkillItem skill="CSS" iconName="vscode-icons:file-type-css"/>
-    <SkillItem skill="Astro" iconName="vscode-icons:file-type-astro"/>
-    <SkillItem skill="Wordpress" iconName="brandico:wordpress"/>
-    <SkillItem skill="Customer Service" iconName="ri:customer-service-fill"/>
-    <SkillItem skill="Java" iconName="logos:java"/>
-    <SkillItem skill="MySQL" iconName="logos:mysql"/>
-    <SkillItem skill="NodeJS" iconName="logos:nodejs"/>
-    <SkillItem skill="PHP" iconName="logos:php"/>
-    <SkillItem skill="API Integration" iconName="logos:postman-icon"/>
-</SkillList>
+<div class="container about-me">
+
+    <SectionHeader header="A Little About Me" subHead="My skills and hobbies"/>
+
+    <div class="excerpt">
+        <p>Hello! My name is George Goldsmith, I am a current student / employee with Liberty University
+            <br>I have been with Liberty University for over a year now with the LUO Admissions team as
+            an admissions evaluator and <strong>LOVE IT</strong>.<br>
+            I Currently hold an Associates In Applied Science(Information Systems Technology) and am on track to finish my
+            bachelors by early 2024.
+            <br>I am in love with web development and just technology in general, and believe that God has called me to do this.
+            <br>Some positive soft skills I have acquired throughout my years of work are....
+        </p>
+        <ul>
+            <li>Positive Attitude</li>
+            <li>3+ Years of Customer Service experience</li>
+            <li>Hard working and dedicated</li>
+            <li>Quick learner</li>
+        </ul>
+    </div>
+    <SectionHeader header="Some Skills I Have Gathered Throughout My Studies" subHead="Software / Web Development"/>
+    <SkillList>
+        <SkillItem skill="HTML" iconName="vscode-icons:file-type-html"/>
+        <SkillItem skill="JS" iconName="vscode-icons:file-type-light-js"/>
+        <SkillItem skill="CSS" iconName="vscode-icons:file-type-css"/>
+        <SkillItem skill="Astro" iconName="vscode-icons:file-type-astro"/>
+        <SkillItem skill="Wordpress" iconName="brandico:wordpress"/>
+        <SkillItem skill="Java" iconName="logos:java"/>
+        <SkillItem skill="MySQL" iconName="logos:mysql"/>
+        <SkillItem skill="NodeJS" iconName="logos:nodejs"/>
+        <SkillItem skill="PHP" iconName="logos:php"/>
+        <SkillItem skill="API Integration" iconName="logos:postman-icon"/>
+        <SkillItem skill="SCSS/SASS" iconName="vscode-icons:file-type-scss2"/>
+        <SkillItem skill="Markdown" iconName="ion:logo-markdown"/>
+    </SkillList>
+</div>
+<style>
+    .about-me{
+        margin-top: 1rem;
+    }
+    ul{
+        width: 25rem;
+        border: #17388a .25em solid;
+    }
+
+    li{
+        padding: .5rem;
+    }
+</style>

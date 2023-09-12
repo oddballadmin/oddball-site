@@ -9,28 +9,31 @@ const { skill,desc,iconName } = Astro.props;
 <style>
     .skill-element{
         display: flex;
-        flex-flow: column nowrap;
+        flex: 1;
         align-items: center;
+        flex-flow: column nowrap;
+        align-self: baseline;
         text-align: center;
-        width: clamp(4em,5vw,8em);
         gap: .5rem;
         position: relative;
-        padding: 1rem;
-
+        padding: 1.5rem;
 
     }
 
     .skill-title{
-        visibility: hidden;
+        width: 100%;
         position: absolute;
-        top: 45%;
+        top: 100%;
+        text-align: center;
+        visibility: hidden;
     }
 
 
     .icon{
+        height: clamp(4rem, 8vh, 6rem);
         margin: auto;
-        height: auto;
-        max-width: 5rem;
+        width: auto;
+
 
     }
 

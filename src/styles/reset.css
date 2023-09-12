@@ -30,6 +30,7 @@ blockquote,
 dl,
 dd {
   margin: 0;
+  padding: 0;
 }
 
 /* Set core root defaults */
@@ -40,8 +41,10 @@ html:focus-within {
 /* Set core body defaults */
 body {
   min-height: 100vh;
+  min-width: 100vh;
+
   text-rendering: optimizeSpeed;
-  line-height: 1.5;
+  line-height: 1.7;
   font-size: 1.6rem;
 }
 
