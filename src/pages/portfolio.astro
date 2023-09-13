@@ -1,5 +1,18 @@
 ---
 
-import SkillList from "../layouts/utils/SkillList.astro";
-import SkillItem from "../layouts/utils/SkillItem.astro";
+import Header from "../layouts/Header.astro";
+import { Image } from "astro:assets";
+import Bio from "../layouts/Bio.astro";
+
+import HeadContainer from "../layouts/utils/Head-Container.astro";
+
+
 ---
+<HeadContainer title="Home">
+    <body>
+    <div class="wrapper">
+        <Header/>
+        <Bio/>
+    </div>
+    </body>
+</HeadContainer>

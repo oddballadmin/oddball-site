@@ -41,11 +41,10 @@ html:focus-within {
 /* Set core body defaults */
 body {
   min-height: 100vh;
-  min-width: 100vh;
-
+  min-width: 100vw;
   text-rendering: optimizeSpeed;
   line-height: 1.7;
-  font-size: 1.6rem;
+  font-size: 1.6em;
 }
 
 /* Remove list styles on ul, ol elements with a class attribute */

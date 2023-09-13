@@ -59,12 +59,13 @@ $font-weights: (
 
 
 body{
+  display: flex;
   font-family: var(--font-family-primary-font-extended);
   position: relative;
   background-color: inherit;
   z-index: 2;
-  height: 100%;
-  width: 100%;
+
+
 
 }
 body::before{
@@ -75,8 +76,8 @@ body::before{
   z-index: -1;
   background-image: url("/public/background.jpg");
   background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
-  scale: 1/1;
 }
 .wrapper{
   width: 100%;
@@ -150,9 +151,9 @@ nav{
 .intro {
   display: flex;
   flex-flow: column nowrap;
-  justify-content: center;
   align-items: center;
-  min-height: 95vh;
+  justify-content: center;
+  min-height: 85vh;
   width: 100%;
   position: relative;
   .dev-bg {
@@ -165,11 +166,11 @@ nav{
     height: 85%;
   }
 
+
   .info {
     display: grid;
     grid-template-columns: 2fr 1fr 2fr;
     justify-content: center;
-    align-content: center;
     text-align: center;
     gap: 10rem;
     h1{
@@ -183,7 +184,8 @@ nav{
     p{
       align-self: center;
       justify-content: center;
-      font-size: clamp(var(--font-size-light),2vw,var(--font-size-small));
+      font-size: clamp(2rem,2.5vh, 3rem);
+
       font-family: var(--font-family-primary-font-extended);
       white-space: nowrap;
       margin: 0 15rem;
@@ -254,7 +256,7 @@ nav{
   }
 }
 
-.about-me{
+.page-sect{
   display: flex;
   flex-flow: column wrap;
   min-height: 100vh;
@@ -268,14 +270,14 @@ nav{
     align-items: flex-start;
     width: 100%;
     p{
-      font-size: clamp(1.5rem,1.5vw,var(--font-size-small));
+      font-size: clamp(1.5rem,10vh,2.5rem);
     }
   }
   .sect-heading{
 
     display: flex;
     flex-flow: column nowrap;
-    line-height: 1.75em;
+    line-height: 2.5em;
     margin: 0;
     padding: 1.5rem 0;
     font-family: var(--font-family-primary-font-extended);
@@ -283,19 +285,72 @@ nav{
     letter-spacing: .2rem;
 
     h2{
-      font-size: clamp(2.75rem,3vw, 3.5rem);
+      line-height: 1.25em;
+
+      font-size: clamp(4.75rem,3vh, 5.5rem);
       padding: 0;
       margin: 0;
     }
     .sub-head{
-      font-size: clamp(1.65rem,1.5vw, 2rem);
+      font-size: clamp(3.65rem,1.5vh, 4rem);
       font-family: var(--font-family-secondary-font);
       font-weight: 200;
+      line-height: 1.25em;
+
 
     }
   }
 }
+.contact-us{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: start;
+  flex: 1;
+  gap: 5rem;
+  .contact-form{
+    flex: .7;
+    display: flex;
+    gap: 1em;
+    flex-flow: column nowrap;
+    font-size: clamp(1.5rem,3vh,2.5rem);
+    height: 100%;
+    input,select,button,textarea{
+      box-shadow: 1px 5px 5px 3px rgba(0,0,0,0.2);
 
+    }
+    .p-picker{
+      width: 75%;
+      padding: .25em 0 .25em .25em;
+    }
+    .email-in{
+
+    }
+    .desc-area{
+      height: 40%;
+      resize: none !important;
+
+    }
+    .btn-group{
+      font-size: clamp(1em,1vh,3em);
+      display: flex;
+      flex-flow: row nowrap;
+      gap: 5rem;
+      button{
+        padding: 0 1em;
+      }
+    }
+  }
+  .img-side{
+    min-width: 25rem;
+    display: flex;
+    flex: .5;
+    img{
+      width: 70%;
+      height: auto;
+    }
+  }
+}
 
 
 

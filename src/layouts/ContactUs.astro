@@ -1,0 +1,37 @@
+---
+import SkillItem from "./utils/SkillItem.astro";
+import SectionHeader from "./utils/SectionHeader.astro";
+import SkillList from "./utils/SkillList.astro";
+import { Image } from "astro:assets";
+import family from "../../public/family.png";
+
+---
+<div class="container page-sect">
+
+    <SectionHeader header="Want To Hire Me?!" subHead="Contact me using the form below"/>
+    <section class="contact-us">
+        <form class="contact-form">
+            <select id="project-type" name="project-type" class="p-picker">
+                <option value="Web Design">Web Design</option>
+                <option value="SEO">Web Design</option>
+                <option value="Contract Work">Contract Work</option>
+                <option value="App Development">App Development</option>
+            </select>
+            <input class="email-in" type="email" placeholder="Email Address"/>
+            <textarea class="desc-area"  placeholder="Breif description of project"/>
+            <div class="btn-group">
+                <button type="reset">Reset</button>
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+        <div class="img-side">
+            <Image src={family} alt="Family"/>
+        </div>
+    </section>
+
+</div>
+<style>
+    .page-sect{
+        margin-top: 2rem;
+    }
+</style>

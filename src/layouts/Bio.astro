@@ -23,7 +23,7 @@ import SectionHeader from "./utils/SectionHeader.astro";
     </div>
     <small class="git-link"> <a href="https://www.github.com" target="_blank">View My Github Repo</a></small>
 </section>
-<div class="container about-me">
+<div class="container page-sect">
 
     <SectionHeader header="A Little About Me" subHead="My skills and hobbies"/>
 
@@ -66,6 +66,8 @@ import SectionHeader from "./utils/SectionHeader.astro";
     ul{
         width: 25rem;
         border: #17388a .25em solid;
+        font-size: clamp(var(--font-size-light),15vw,var(--font-size-small));
+
     }
 
     li{
