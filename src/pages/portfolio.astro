@@ -1,10 +1,12 @@
 ---
 
 import Header from "../layouts/Header.astro";
-import { Image } from "astro:assets";
 import Bio from "../layouts/Bio.astro";
-
+import GitRepositories from '../layouts/GitRepositories.astro'
 import HeadContainer from "../layouts/utils/Head-Container.astro";
+
+
+
 
 
 ---
@@ -12,7 +14,8 @@ import HeadContainer from "../layouts/utils/Head-Container.astro";
     <body>
     <div class="wrapper">
         <Header/>
-        <Bio/>
+        <GitRepositories/>
+       
     </div>
     </body>
 </HeadContainer>

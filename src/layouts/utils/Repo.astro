@@ -1,3 +1,22 @@
 ---
-$END$
+const {name, desc,link} = Astro.props;
 ---
+
+
+<div class="repo">
+    <h2>{name}</h2>
+    <p>{desc}</p>
+    <a class="git-link">{link}</a>
+</div>
+
+<style>
+    .repo{
+        display: flex;
+        flex-direction: column;
+        border: 2.5px solid #000;
+        align-items: center;
+        text-align: center;
+
+    }
+     
+</style>

@@ -1,32 +1,33 @@
 ---
-// Wrap the fetch call in an async function
-async function fetchRepos() {
-    const res = await fetch('https://api.github.com/users/oddballadmin/repos');
-
-    if (!res.ok) {
-        throw new Error(`GitHub API returned an error: ${res.statusText}`);
-    }
-
-    const data = await res.json();
-    console.log(data);
-
-    if (Array.isArray(data)) {
-        return data;
-    } else {
-        console.error('Data is not an array:', data);
-        return [];  // Return an empty array as a fallback
-    }
-}
-
-const data = await fetchRepos();
-
-
-// Call the function and store the result
-
+import Repo from "./utils/Repo.astro";
+import SectionHeader from "./utils/SectionHeader.astro";
+import imgTest from "/public/family.png";
+import { Image } from "astro:assets";
 ---
 
-<section class="container repo-sect">
-    {data.map((r)=>{
-        console.log(r.name);
-    })}
-</section>
+<section class="container page-sect" >
+    <SectionHeader header="Some examples of my previous Work"
+     subHead="Websites / Applications" />
+     <div class="git-portfolio">
+        <Repo class="repo" name="Donation Tracker" desc="An app to track the fictional dontations that a user has made and charts the overall donations with chart.js" link="https://github.com/oddballadmin/weather-widget"/>
+         <Repo class="repo" name="Living Hope Acres" desc="A website concept originally designed for my parents, work stopped on it as they no longer had the need for a website" link="https://github.com/oddballadmin/weather-widget"/>
+
+        <Repo class="repo" name="Weather Widget" desc="A small lightweight Javascript applet that functions as a chrome extension, tracks the weather according to a customers address" link="https://github.com/oddballadmin/weather-widget"/>
+
+     </div>
+   </section>
+
+   <style>
+         .git-portfolio {
+              display: flex;
+              flex-direction: row;
+              width: 100%;
+              height: auto;
+              gap: 2rem;
+         }
+         @media only screen and (max-width: 600px) {
+            .git-portfolio {
+                flex-direction: column;
+         }
+         }
+   </style>
