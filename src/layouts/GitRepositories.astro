@@ -1,0 +1,32 @@
+---
+// Wrap the fetch call in an async function
+async function fetchRepos() {
+    const res = await fetch('https://api.github.com/users/oddballadmin/repos');
+
+    if (!res.ok) {
+        throw new Error(`GitHub API returned an error: ${res.statusText}`);
+    }
+
+    const data = await res.json();
+    console.log(data);
+
+    if (Array.isArray(data)) {
+        return data;
+    } else {
+        console.error('Data is not an array:', data);
+        return [];  // Return an empty array as a fallback
+    }
+}
+
+const data = await fetchRepos();
+
+
+// Call the function and store the result
+
+---
+
+<section class="container repo-sect">
+    {data.map((r)=>{
+        console.log(r.name);
+    })}
+</section>
