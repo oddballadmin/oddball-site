@@ -37,7 +37,8 @@ import SectionHeader from "./utils/SectionHeader.astro";
             <br>Some positive soft skills I have acquired throughout my years of work are....
         </p>
         <ul>
-            <li>Positive Attitude</li>
+            <li>Positive attitude</li>
+            <li>Willing to learn</li>
             <li>3+ Years of Customer Service experience</li>
             <li>Hard working and dedicated</li>
             <li>Quick learner</li>
@@ -60,17 +61,110 @@ import SectionHeader from "./utils/SectionHeader.astro";
     </SkillList>
 </div>
 <style>
+  p{
+  }
     .about-me{
         margin-top: 1rem;
     }
     ul{
-        width: 25rem;
-        border: #17388a .25em solid;
-        font-size: clamp(var(--font-size-light),15vw,var(--font-size-small));
+    font-size: clamp(1.2rem, 2vh,2rem);
 
+        width: auto;
+        border: #17388a .25em solid;
+        padding: 1em 2em;
+        
     }
 
     li{
         padding: .5rem;
     }
+    
+.intro {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  min-height: 85vh;
+  width: 100%;
+  position: relative;
+}
+  .intro .dev-bg {
+    position: absolute;
+    display: block;
+    align-self: center;
+    z-index: -1;
+    opacity: .2;
+    width: 85%;
+    height: 85%;
+  }
+
+
+  .info {
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr;
+    justify-content: center;
+    text-align: center;
+    gap: 10rem;
+  }
+   .info h1{
+      align-self: center;
+      justify-content: center;
+      font-size: clamp(3rem,4.75vw, 4.75rem);
+      font-family: var(--font-family-secondary-font-med);
+      white-space: nowrap;
+      letter-spacing: .5rem;
+      font-weight: 700;
+    }
+    .info p{
+      align-self: center;
+      justify-content: center;
+      line-height: 1.5;
+      font-size: clamp(1.75rem,3.5vw, 3.5rem);
+      font-family: var(--font-family-primary-font-extended);
+      font-weight: 400;
+      white-space: nowrap;
+      margin: 0 15rem;
+    }
+
+    .decorator{
+      height: 2rem;
+      background-color: #17388a;
+      align-self: center;
+      border-radius: 50vh;
+    }
+    .left{
+      border-bottom-left-radius: 0;
+      border-top-left-radius:0 ;
+    }
+    .right{
+      border-bottom-right-radius: 0;
+      border-top-right-radius:0 ;
+    }
+  
+.git-link{
+  margin: 1rem;
+  padding: 1rem 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 15px 20px 35px 17px rgba(0,0,0,0.1);
+  background-color: #17388a;
+  height: auto;
+  font-size: clamp(1rem, 1.75vw,1.75rem);
+
+  
+}
+  .git-link:focus{
+    box-shadow: 0 0 0 0 rgba(0,0,0,0.1);
+
+  }
+  a{
+    color: hsl(var(--color-accent-color));
+    text-decoration: none;
+  }
+    a:visited{
+      color: hsl(var(--color-accent-color));
+    }
+    @media only screen and (max-width: 600px) {
+      .intro{
+        min-height: 75vh;
+         }
 </style>

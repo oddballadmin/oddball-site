@@ -1,0 +1,136 @@
+@import url("https://use.typekit.net/xcf6hfx.css");
+@import url("https://use.typekit.net/xcf6hfx.css");
+:root {
+  --font-size-light: 1.75rem;
+  --font-size-small: 2.5rem;
+  --font-size-medium: 3.5rem;
+  --font-size-large: 4.5rem;
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-bold: 700;
+  --font-family-secondary-font: Oswald, sans-serif;
+  --font-family-secondary-font-med: Oswald Medium, sans-serif;
+  --font-family-primary-font-extended: PT Serif Pro Extended, sans-serif;
+  --color-primary-color: 222.78 71.43% 31.57%;
+  --color-secondary-color: 0 0% 80%;
+  --color-accent-color: 0 0% 100%;
+  --color-lightblack: 100 100% 0;
+}
+
+body {
+  display: flex;
+  font-family: var(--font-family-primary-font-extended);
+  position: relative;
+  background-color: inherit;
+  z-index: 2;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.wrapper {
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.container {
+  width: 96%;
+  align-self: center;
+  margin: 0 auto;
+}
+
+p {
+  font-size: clamp(1.5rem, 2vh, 2.25rem);
+  line-height: 2;
+}
+
+.skill-element:hover .skill-title {
+  visibility: visible;
+}
+
+.skill-title {
+  position: relative;
+  font-family: var(--font-family-secondary-font);
+}
+.skill-title::after, .skill-title::before {
+  display: block;
+  content: "";
+  position: absolute;
+  height: 0.5rem;
+  width: 100%;
+  background-color: #17388a;
+}
+.skill-title::after {
+  bottom: 100%;
+}
+.skill-title::before {
+  top: 100%;
+}
+
+.page-sect {
+  display: flex;
+  flex-flow: column wrap;
+  min-height: 100vh;
+}
+.page-sect h1, .page-sect h2 {
+  font-family: var(--font-family-secondary-font);
+  padding: 0.5rem 0;
+}
+.page-sect .excerpt {
+  flex-flow: column nowrap;
+  align-items: flex-start;
+}
+.page-sect .contact-us {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: start;
+  flex: 1;
+  gap: 5rem;
+}
+.page-sect .contact-us .contact-form {
+  flex: 0.7;
+  display: flex;
+  gap: 1em;
+  flex-flow: column nowrap;
+  font-size: clamp(1.5rem, 3vh, 2.5rem);
+  height: 100%;
+}
+.page-sect .contact-us .contact-form input, .page-sect .contact-us .contact-form select, .page-sect .contact-us .contact-form button, .page-sect .contact-us .contact-form textarea {
+  box-shadow: 1px 5px 5px 3px rgba(0, 0, 0, 0.2);
+}
+.page-sect .contact-us .contact-form .p-picker {
+  width: 75%;
+  padding: 0.25em 0 0.25em 0.25em;
+}
+.page-sect .contact-us .contact-form .desc-area {
+  height: 40%;
+  resize: none !important;
+}
+.page-sect .contact-us .contact-form .btn-group {
+  font-size: clamp(1em, 1vh, 3em);
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 5rem;
+}
+.page-sect .contact-us .contact-form .btn-group button {
+  padding: 0 1em;
+}
+.page-sect .contact-us .img-side {
+  min-width: 25rem;
+  display: flex;
+  flex: 0.5;
+}
+.page-sect .contact-us .img-side img {
+  width: 70%;
+  height: auto;
+}/*# sourceMappingURL=style.css.map */

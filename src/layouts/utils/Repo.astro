@@ -1,22 +1,53 @@
 ---
 const {name, desc,link} = Astro.props;
+
 ---
 
 
 <div class="repo">
     <h2>{name}</h2>
     <p>{desc}</p>
-    <a class="git-link">{link}</a>
+    <button class="git-link">View Project</button>
 </div>
 
 <style>
-    .repo{
+    .repo {
         display: flex;
         flex-direction: column;
         border: 2.5px solid #000;
         align-items: center;
         text-align: center;
-
+        min-height: 30rem;
+        position: relative;
+        min-width: 30rem;
     }
-     
+    h2 {
+        background-color: hsl(var(--color-primary-color));
+        color: white;
+        width: 100%;
+    }
+    p {
+        padding: 1rem;
+    }
+    button {
+        background-color: hsl(var(--color-primary-color));
+        color: white;
+        border: none;
+        padding: 1rem;
+        cursor: pointer;
+        position: absolute;
+        justify-content: center;
+        top: 90%;
+        margin: auto;
+    }
 </style>
+
+<script define:vars={{link}}>
+    const gitLinks = document.querySelectorAll('.git-link');
+    gitLinks.forEach(gitLink => {
+        gitLink.addEventListener('click', () => {
+            window.open(link, '_blank');
+        });
+    });
+</script>
+
