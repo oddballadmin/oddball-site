@@ -16,39 +16,6 @@ import ContactUs from "../layouts/ContactUs.astro";
         <ContactUs/>
     </div>
     </body>
-    <!-- <script>
-        const form = document.querySelector(".contact-form");
-form.addEventListener("submit", async (e) => {
-  e.preventDefault();
-  
-  const project = document.querySelector("#project-type").value;
-  const email = document.querySelector(".email-in").value;
-  const message = document.querySelector(".desc-area").value;
-
-  try {
-    const response = await fetch('http://localhost:3000/send-email', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ email, project, message })
-    });
-
-    const data = await response.json();
-
-    if (response.status === 200) {
-      console.log('Email sent successfully:', data);
-      // You can show a success message to the user here
-    } else {
-      console.error('Error sending email:', data);
-      // You can show an error message to the user here
-    }
-  } catch (error) {
-    console.error('There was an error:', error);
-    // Handle the error in the UI as needed
-  }
-});
-
-    </script> -->
+    
     
 </HeadContainer>

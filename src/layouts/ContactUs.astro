@@ -11,14 +11,14 @@ import family from "../../public/family.png";
     <SectionHeader header="Want To Hire Me?!" subHead="Contact me using the form below"/>
     <section class="contact-us">
         <form class="contact-form" name="contact" method="post" data-netlify="true" onsubmit="submit">
-            <select id="project-type" name="project-type" class="p-picker">
+            <select required id="project-type" name="project-type" class="p-picker">
                 <option value="Web Design">Web Design</option>
                 <option value="SEO">Web Design</option>
                 <option value="Contract Work">Contract Work</option>
                 <option value="App Development">App Development</option>
             </select>
-            <input class="email-in" type="email" name="email"placeholder="Email Address"/>
-            <textarea class="desc-area" name="message"  placeholder="Breif description of project"/>
+            <input required class="email-in" type="email" name="email"placeholder="Email Address"/>
+            <textarea required class="desc-area" name="message"  placeholder="Breif description of project"/>
             <div class="btn-group">
                 <button type="reset">Reset</button>
                 <button type="submit">Submit</button>
