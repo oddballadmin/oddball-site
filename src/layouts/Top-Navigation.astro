@@ -37,7 +37,7 @@ nav{
         font-family: var(--font-family-secondary-font);
         font-weight: var(--font-weight-700);
         letter-spacing: 0.20ch;
-        font-size: clamp(1rem,1.5vw, 1.55rem);
+        font-size: clamp(1.25rem, calc(1.5vw + 1rem), 1.75rem);
 
       
 }
@@ -45,13 +45,13 @@ nav{
             .nav-link{
               justify-content: end;
               
-              font-size: 1rem;
             }
             ul{
               gap: .1em;
             }
             .nav-item:last-of-type{
-              padding-right: 0;
+              margin-right: 0;
+
             }
          }
          
@@ -59,6 +59,7 @@ nav{
          {
             nav{
               width: 100%;
+              text-align: center;
               }
               nav ul{
                 width: 100%;
