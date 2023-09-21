@@ -13,8 +13,6 @@ import SectionHeader from "./utils/SectionHeader.astro";
         <!-- <span class="decorator left"></span> -->
         <h1>George Goldsmith</h1>
         <!-- <span class="decorator right"></span> -->
-    </div>
-    <div class="info">
         <!-- <span class="decorator left"></span> -->
         <p>Web / Software developer (Fullstack)
             <br>BAS Information Systems Technology
@@ -29,12 +27,12 @@ import SectionHeader from "./utils/SectionHeader.astro";
 
     <div class="excerpt">
         <p>Hello! My name is George Goldsmith, I am a current student / employee with Liberty University
-            <br>I have been with Liberty University for over a year now with the LUO Admissions team as
+            I have been with Liberty University for over a year now with the LUO Admissions team as
             an admissions evaluator and <strong>LOVE IT</strong>.<br>
             I Currently hold an Associates In Applied Science(Information Systems Technology) and am on track to finish my
             bachelors by early 2024.
-            <br>I am in love with web development and just technology in general, and believe that God has called me to do this.
-            <br>Some positive soft skills I have acquired throughout my years of work are....
+            I am in love with web development and just technology in general, and believe that God has called me to do this.
+            Some positive soft skills I have acquired throughout my years of work are....
         </p>
         <ul>
             <li>Positive attitude</li>
@@ -100,10 +98,10 @@ import SectionHeader from "./utils/SectionHeader.astro";
 
   .info {
     display: flex;
+    flex-flow: column;
     width: 100%;
     justify-content: center;
     text-align: center;
-    gap: 10rem;
   }
    .info h1{
       align-self: center;
@@ -125,20 +123,7 @@ import SectionHeader from "./utils/SectionHeader.astro";
       margin: 0 15rem;
     }
 
-    .decorator{
-      height: 2rem;
-      background-color: #17388a;
-      align-self: center;
-      border-radius: 50vh;
-    }
-    .left{
-      border-bottom-left-radius: 0;
-      border-top-left-radius:0 ;
-    }
-    .right{
-      border-bottom-right-radius: 0;
-      border-top-right-radius:0 ;
-    }
+    
   
 .git-link{
   margin: 1rem;
@@ -162,6 +147,11 @@ import SectionHeader from "./utils/SectionHeader.astro";
     a:visited{
       color: hsl(var(--color-accent-color));
     }
-    @media only screen and (max-width: 40em) {
+    @media only screen and (max-width: 320px) {+
+      .intro{
+        text-align: center;
+        width: 100%;
+      }
+      
       }
 </style>

@@ -34,5 +34,79 @@ import family from "../../public/family.png";
     .page-sect{
         margin-top: 2rem;
     }
+    .contact-us{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: start;
+  flex: 1;
+  gap: 5rem;
+    }
+  .contact-form{
+    flex: .7;
+    display: flex;
+    gap: 1em;
+    flex-flow: column nowrap;
+    font-size: clamp(1.5rem,calc(3vw + 1rem),2.5rem);
+    height: 100%;
+  }
+   .contact-form input,select,button,textarea{
+      box-shadow: 1px 5px 5px 3px rgba(0,0,0,0.2);
+
+    }
+    .p-picker{
+      width: 75%;
+      padding: .25em 0 .25em .25em;
+    }
+    
+    .desc-area{
+      height: 40%;
+      resize: none !important;
+
+    }
+    .btn-group{
+      font-size: clamp(1rem,calc(1vw + 1rem),3rem);
+      display: flex;
+      flex-flow: row nowrap;
+      gap: 5rem;
+    
+    }
+    .btn-group button{
+        padding: 0 1em;
+      }
+  
+  .img-side{
+    min-width: 25rem;
+    display: flex;
+    flex: .5;
+
+  }
+  .img-side img{
+      width: 70%;
+      height: auto;
+    }
+
+
+
+
+    @media only screen and (max-width: 600px) {
+        .contact-us{
+            flex-direction: column;
+        }
+        .contact-form{
+            width: 100%;
+            align-items: center;
+        }
+        .btn-group{
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+        }
+        .img-side{
+            width: 100%;
+            justify-content: center;
+        }
+
+}
 </style>
 

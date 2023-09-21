@@ -126,64 +126,9 @@ p{
     padding: .5rem 0;
   }
   .excerpt{
-    flex-flow: column nowrap;
-    align-items: flex-start;
+    flex-flow: column wrap;
     
   }
-
-
-.contact-us{
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-  align-items: start;
-  flex: 1;
-  gap: 5rem;
-  .contact-form{
-    flex: .7;
-    display: flex;
-    gap: 1em;
-    flex-flow: column nowrap;
-    font-size: clamp(1.5rem,calc(3vw + 1rem),2.5rem);
-    height: 100%;
-    input,select,button,textarea{
-      box-shadow: 1px 5px 5px 3px rgba(0,0,0,0.2);
-
-    }
-    .p-picker{
-      width: 75%;
-      padding: .25em 0 .25em .25em;
-    }
-    
-    .desc-area{
-      height: 40%;
-      resize: none !important;
-
-    }
-    .btn-group{
-      font-size: clamp(1rem,calc(1vw + 1rem),3rem);
-      display: flex;
-      flex-flow: row nowrap;
-      gap: 5rem;
-      button{
-        padding: 0 1em;
-      }
-    }
-  }
-  .img-side{
-    min-width: 25rem;
-    display: flex;
-    flex: .5;
-    img{
-      width: 70%;
-      height: auto;
-    }
-  }
 }
-
-
-}
-
-
 
 
