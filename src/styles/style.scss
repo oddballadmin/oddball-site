@@ -58,12 +58,12 @@ $font-weights: (
 
 
 body{
-  display: flex;
+  width: 100vw;
   font-family: var(--font-family-primary-font-extended);
   position: relative;
   background-color: inherit;
   z-index: 2;
-  font-size: clamp(4.5rem, calc(3.5vw + 1rem),4rem);
+  font-size: 1.8rem;
 
 }
 
@@ -87,7 +87,7 @@ body::before{
   margin: 0 auto;
 }
 p{
-  font-size: clamp(1.5rem, calc(1.5vw + 1rem),2rem);
+  font-size: clamp(1.8rem, calc(1.5vw + 1rem),2rem);
   line-height: 2;
 }
 .skill-element{

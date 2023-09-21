@@ -10,16 +10,16 @@ import SectionHeader from "./utils/SectionHeader.astro";
     <Image src={devImg} alt="dev at work" class="dev-bg"/>
 
     <div class="info">
-        <span class="decorator left"></span>
+        <!-- <span class="decorator left"></span> -->
         <h1>George Goldsmith</h1>
-        <span class="decorator right"></span>
+        <!-- <span class="decorator right"></span> -->
     </div>
     <div class="info">
-        <span class="decorator left"></span>
+        <!-- <span class="decorator left"></span> -->
         <p>Web / Software developer (Fullstack)
             <br>BAS Information Systems Technology
         </p>
-        <span class="decorator right"></span>
+        <!-- <span class="decorator right"></span> -->
     </div>
     <small class="git-link"> <a href="https://www.github.com" target="_blank">View My Github Repo</a></small>
 </section>
@@ -99,8 +99,8 @@ import SectionHeader from "./utils/SectionHeader.astro";
 
 
   .info {
-    display: grid;
-    grid-template-columns: 2fr 1fr 2fr;
+    display: flex;
+    width: 100%;
     justify-content: center;
     text-align: center;
     gap: 10rem;
@@ -109,10 +109,10 @@ import SectionHeader from "./utils/SectionHeader.astro";
       align-self: center;
       justify-content: center;
       font-size: clamp(3rem,4.75vw, 4.75rem);
-      font-family: var(--font-family-secondary-font-med);
+      font-family: var(--font-family-secondary-font);
       white-space: nowrap;
       letter-spacing: .5rem;
-      font-weight: 700;
+      font-weight: 500;
     }
     .info p{
       align-self: center;
