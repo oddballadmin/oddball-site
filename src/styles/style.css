@@ -23,6 +23,7 @@ body {
   position: relative;
   background-color: inherit;
   z-index: 2;
+  font-size: clamp(4.5rem, 3.5vw + 1rem, 4rem);
 }
 
 body::before {
@@ -31,14 +32,12 @@ body::before {
   height: 100%;
   width: 100%;
   z-index: -1;
-  background-image: url("/public/background.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
 .wrapper {
-  width: 100%;
   display: flex;
   flex-flow: column nowrap;
 }
@@ -49,137 +48,9 @@ body::before {
   margin: 0 auto;
 }
 
-header {
-  display: flex;
-  flex-flow: row wrap;
-  min-height: 5rem;
-  width: 95%;
-  align-self: center;
-  align-items: center;
-  padding-block: 1.75rem;
-}
-header .brand {
-  display: block;
-  height: 6em;
-}
-header .brand img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-nav {
-  display: flex;
-  flex-flow: row nowrap;
-  flex: 1;
-  width: auto;
-  justify-content: end;
-}
-nav ul {
-  display: inline-flex;
-  width: auto;
-  gap: 3rem;
-}
-nav ul .nav-item {
-  display: flex;
-  padding: 0.25rem 2rem;
-  border-radius: 50vh;
-}
-nav ul .nav-item:hover {
-  background-color: hsl(var(--color-primary-color));
-}
-nav ul .nav-item:hover .nav-link {
-  color: white;
-}
-nav ul .nav-item .nav-link {
-  color: hsl(var(--color-lightblack));
-  text-decoration: none;
-  font-family: var(--font-family-secondary-font);
-  font-weight: var(--font-weight-700);
-  letter-spacing: 0.2ch;
-}
-
-.active {
-  background-color: hsl(var(--color-primary-color));
-}
-.active .nav-link {
-  color: white !important;
-}
-
-.intro {
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
-  justify-content: center;
-  min-height: 85vh;
-  width: 100%;
-  position: relative;
-}
-.intro .dev-bg {
-  position: absolute;
-  display: block;
-  align-self: center;
-  z-index: -1;
-  opacity: 0.2;
-  width: 85%;
-  height: 85%;
-}
-.intro .info {
-  display: grid;
-  grid-template-columns: 2fr 1fr 2fr;
-  justify-content: center;
-  text-align: center;
-  gap: 10rem;
-}
-.intro .info h1 {
-  align-self: center;
-  justify-content: center;
-  font-size: clamp(var(--font-size-medium), 5.5vw, var(--font-size-large));
-  font-family: var(--font-family-primary-font-extended);
-  white-space: nowrap;
-  letter-spacing: 0.5rem;
-}
-.intro .info p {
-  align-self: center;
-  justify-content: center;
-  font-size: clamp(2rem, 2.5vh, 3rem);
-  font-family: var(--font-family-primary-font-extended);
-  white-space: nowrap;
-  margin: 0 15rem;
-}
-.intro .info .decorator {
-  height: 2rem;
-  background-color: #17388a;
-  align-self: center;
-  border-radius: 50vh;
-}
-.intro .info .left {
-  border-bottom-left-radius: 0;
-  border-top-left-radius: 0;
-}
-.intro .info .right {
-  border-bottom-right-radius: 0;
-  border-top-right-radius: 0;
-}
-.intro .git-link {
-  margin: 1rem;
-  padding: 1rem 1.5rem;
-  border-radius: 1rem;
-  box-shadow: 15px 20px 35px 17px rgba(0, 0, 0, 0.1);
-  background-color: #17388a;
-  width: auto;
-  height: auto;
-  font-size: 1em;
-}
-.intro .git-link:focus {
-  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.1);
-}
-.intro .git-link a {
-  color: hsl(var(--color-accent-color));
-  text-decoration: none;
-}
-.intro .git-link a:visited {
-  color: hsl(var(--color-accent-color));
+p {
+  font-size: clamp(1.5rem, 1.5vw + 1rem, 2rem);
+  line-height: 2;
 }
 
 .skill-element:hover .skill-title {
@@ -215,37 +86,10 @@ nav ul .nav-item .nav-link {
   padding: 0.5rem 0;
 }
 .page-sect .excerpt {
-  display: flex;
   flex-flow: column nowrap;
   align-items: flex-start;
-  width: 100%;
 }
-.page-sect .excerpt p {
-  font-size: clamp(1.5rem, 10vh, 2.5rem);
-}
-.page-sect .sect-heading {
-  display: flex;
-  flex-flow: column nowrap;
-  line-height: 2.5em;
-  margin: 0;
-  padding: 1.5rem 0;
-  font-family: var(--font-family-primary-font-extended);
-  letter-spacing: 0.2rem;
-}
-.page-sect .sect-heading h2 {
-  line-height: 1.25em;
-  font-size: clamp(4.75rem, 3vh, 5.5rem);
-  padding: 0;
-  margin: 0;
-}
-.page-sect .sect-heading .sub-head {
-  font-size: clamp(3.65rem, 1.5vh, 4rem);
-  font-family: var(--font-family-secondary-font);
-  font-weight: 200;
-  line-height: 1.25em;
-}
-
-.contact-us {
+.page-sect .contact-us {
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
@@ -253,40 +97,40 @@ nav ul .nav-item .nav-link {
   flex: 1;
   gap: 5rem;
 }
-.contact-us .contact-form {
+.page-sect .contact-us .contact-form {
   flex: 0.7;
   display: flex;
   gap: 1em;
   flex-flow: column nowrap;
-  font-size: clamp(1.5rem, 3vh, 2.5rem);
+  font-size: clamp(1.5rem, 3vw + 1rem, 2.5rem);
   height: 100%;
 }
-.contact-us .contact-form input, .contact-us .contact-form select, .contact-us .contact-form button, .contact-us .contact-form textarea {
+.page-sect .contact-us .contact-form input, .page-sect .contact-us .contact-form select, .page-sect .contact-us .contact-form button, .page-sect .contact-us .contact-form textarea {
   box-shadow: 1px 5px 5px 3px rgba(0, 0, 0, 0.2);
 }
-.contact-us .contact-form .p-picker {
+.page-sect .contact-us .contact-form .p-picker {
   width: 75%;
   padding: 0.25em 0 0.25em 0.25em;
 }
-.contact-us .contact-form .desc-area {
+.page-sect .contact-us .contact-form .desc-area {
   height: 40%;
   resize: none !important;
 }
-.contact-us .contact-form .btn-group {
-  font-size: clamp(1em, 1vh, 3em);
+.page-sect .contact-us .contact-form .btn-group {
+  font-size: clamp(1rem, 1vw + 1rem, 3rem);
   display: flex;
   flex-flow: row nowrap;
   gap: 5rem;
 }
-.contact-us .contact-form .btn-group button {
+.page-sect .contact-us .contact-form .btn-group button {
   padding: 0 1em;
 }
-.contact-us .img-side {
+.page-sect .contact-us .img-side {
   min-width: 25rem;
   display: flex;
   flex: 0.5;
 }
-.contact-us .img-side img {
+.page-sect .contact-us .img-side img {
   width: 70%;
   height: auto;
 }

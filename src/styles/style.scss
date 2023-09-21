@@ -22,7 +22,6 @@ $font-sizes: (
         'small': 2.5rem,
         'medium': 3.5rem,
         'large': 4.5rem
-
 );
 $font-weights: (
         'light': 300,
@@ -64,6 +63,7 @@ body{
   position: relative;
   background-color: inherit;
   z-index: 2;
+  font-size: clamp(4.5rem, calc(3.5vw + 1rem),4rem);
 
 }
 
@@ -87,7 +87,7 @@ body::before{
   margin: 0 auto;
 }
 p{
-  font-size: clamp(1.5rem, 2vh,2.25rem);
+  font-size: clamp(1.5rem, calc(1.5vw + 1rem),2rem);
   line-height: 2;
 }
 .skill-element{
@@ -130,7 +130,8 @@ p{
     align-items: flex-start;
     
   }
-  
+
+
 .contact-us{
   display: flex;
   flex-flow: row nowrap;
@@ -143,7 +144,7 @@ p{
     display: flex;
     gap: 1em;
     flex-flow: column nowrap;
-    font-size: clamp(1.5rem,3vh,2.5rem);
+    font-size: clamp(1.5rem,calc(3vw + 1rem),2.5rem);
     height: 100%;
     input,select,button,textarea{
       box-shadow: 1px 5px 5px 3px rgba(0,0,0,0.2);
@@ -160,7 +161,7 @@ p{
 
     }
     .btn-group{
-      font-size: clamp(1em,1vh,3em);
+      font-size: clamp(1rem,calc(1vw + 1rem),3rem);
       display: flex;
       flex-flow: row nowrap;
       gap: 5rem;

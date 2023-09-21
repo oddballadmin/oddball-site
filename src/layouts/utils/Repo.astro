@@ -5,7 +5,9 @@ const {name, desc,link} = Astro.props;
 
 
 <div class="repo">
-    <h2>{name}</h2>
+    <div class="title">
+        <h2>{name}</h2>
+    </div>
     <p>{desc}</p>
     <button class="git-link">View Project</button>
 </div>
@@ -20,20 +22,29 @@ const {name, desc,link} = Astro.props;
         min-height: 30rem;
         position: relative;
         min-width: 30rem;
+        margin: 5rem 0;
     }
-    h2 {
-        background-color: hsl(var(--color-primary-color));
-        color: white;
+    .title{
         width: 100%;
     }
+    h2{
+        background-color: hsl(var(--color-primary-color));
+        color: white;
+        letter-spacing: .30ch;
+        font-size: clamp(1.825rem,calc(2.5vw + 1rem), 3.65rem);
+
+    }
     p {
-        padding: 1rem;
+        padding: 1em;
+        font-size: clamp(1rem,calc(2.5vw + 1rem), 1.5rem);
+    
     }
     button {
+        font-size: clamp(1rem,calc(2.5vw + 1rem), 1.5rem);
         background-color: hsl(var(--color-primary-color));
         color: white;
         border: none;
-        padding: 1rem;
+        padding: 1em;
         cursor: pointer;
         position: absolute;
         justify-content: center;
