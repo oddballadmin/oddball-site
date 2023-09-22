@@ -17,6 +17,10 @@
   --color-lightblack: 100 100% 0;
 }
 
+.active {
+  display: block !important;
+}
+
 body {
   width: 100vw;
   font-family: var(--font-family-primary-font-extended);
@@ -28,10 +32,12 @@ body {
 
 body::before {
   content: "";
-  position: absolute;
+  display: block;
+  position: fixed;
   height: 100%;
   width: 100%;
   z-index: -1;
+  background-image: url("../images/background.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

@@ -1,8 +1,6 @@
 ---
 import Repo from "./utils/Repo.astro";
 import SectionHeader from "./utils/SectionHeader.astro";
-import imgTest from "/public/family.png";
-import { Image } from "astro:assets";
 ---
 
 <section class="container page-sect" >
@@ -10,8 +8,9 @@ import { Image } from "astro:assets";
      subHead="Websites / Applications" />
      <div class="git-portfolio">
          <Repo class="repo" name="Donation Tracker" desc="An app to track the fictional dontations that a user has made and charts the overall donations with chart.js" link="https://github.com/oddballadmin/donationtracker"/>
-         <Repo class="repo" name="Living Hope Acres" desc="A website concept originally designed for my parents, work stopped on it as they no longer had the need for a website" link="https://oddballadmin.github.io/"/>
+         <Repo class="repo" name="Living Hope Acres" desc="A website concept originally designed to be used as a livestock website (Work in Progress)" link="https://oddballadmin.github.io/"/>
          <Repo class="repo" name="Weather Widget" desc="A small lightweight Javascript applet that functions as a chrome extension, tracks the weather according to a customers address" link="https://github.com/oddballadmin/weather-widget"/>
+         <Repo class="repo" name="Portfolio Website" desc="This is my portfolio site! Designed using Astro, to demonstrate and show off my work" link="oddballinteractive.netlify.app"/>
 
      </div>
    </section>
@@ -19,15 +18,18 @@ import { Image } from "astro:assets";
    <style>
          .git-portfolio {
               display: flex;
-              flex-direction: row;
+              flex-flow: row wrap;
               min-width: 100%;
               height: auto;
               gap: 2rem;
+              justify-content: center;
          }
-         @media only screen and (max-width: 600px) {
+         @media (min-width: 0px) and (max-width: 600px) {
             .git-portfolio {
                 flex-direction: column;
                 align-items: center;
+                width: 100%;
+                
          }
          }
    </style>

@@ -1,0 +1,27 @@
+---
+import Icon from "astro-icon";
+---
+<div class="mobile-menu">
+        <button id="menu-toggle"><Icon name="ion:menu"/> </button>
+</div>
+<script>
+    document.getElementById("menu-toggle").addEventListener("click", function (e) {
+       e.preventDefault();
+       document.getElementById("nav").classList.toggle("active");
+    });
+</script>
+<style>
+    button{
+        display: none;
+    }
+    @media (min-width: 0px) and (max-width: 600px) {
+    button{
+      display: flex;
+      width: clamp(3.5rem, calc(6vw + 1rem), 7.5rem);
+      border: none;
+      padding: 0;
+      margin: 0;
+    }
+   
+    }
+</style>

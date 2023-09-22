@@ -1,16 +1,23 @@
 ---
 import TopNavigation from "./Top-Navigation.astro";
-import brandImg from '../../public/oi-logo.webp';
+import brandImg from '../images/oi-logo.webp';
 import { Image } from "astro:assets";
+import Icon from "astro-icon";
+import MobileMenu from "./utils/MobileMenu.astro";
 ---
-<header>
+<header class="head">
+  <div class="mobile-head">
     <div class="brand">
-        <Image src={ brandImg } alt="Brand Logo"/></div>
+      <Image src={ brandImg } alt="Brand Logo"/>
+    </div>
+    <MobileMenu/>
+  </div>
+    
     <TopNavigation/>
 </header>
 
 <style>
-header{
+.head{
   display: flex;
   flex-flow: row wrap;
   min-height: 5rem;
@@ -22,7 +29,7 @@ header{
 }
 .brand{
     display: flex;
-    height: clamp(4rem, calc(6vw + 1rem), 7.5rem);
+    height: clamp(3.5rem, calc(6vw + 1rem), 7.5rem);
 
   
   }
@@ -32,12 +39,31 @@ header{
       object-fit: cover;
     }  
     
-    @media (min-width: 0px) and (max-width: 320px) {
-      header{
-          width: 98%;
-          flex-flow: column wrap;
+    @media (min-width: 0px) and (max-width: 600px) {
+      .head{
+        margin-bottom: 4rem;
+          width: 100%;
+          flex-flow: column nowrap;
           align-items: center;
           align-content: center;
+          background-color: hsla(0, 0%, 100%, 0.85);
+          top: 0;
+          z-index: 100;
+          justify-content: center;
+          box-shadow: 0 0 1.5rem rgba(0,0,0,0.5);
   }
+  
+        .mobile-head{
+            display: flex;
+            flex-flow: row wrap;
+            width: 100%;
+            justify-content: space-between;
+            align-items: center;
+            align-content: center;
+            padding: 0 2rem;
+            isolation: isolate;
+          }
+            
+  
 }
 </style>

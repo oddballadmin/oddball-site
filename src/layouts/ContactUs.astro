@@ -1,32 +1,33 @@
 ---
-import SkillItem from "./utils/SkillItem.astro";
 import SectionHeader from "./utils/SectionHeader.astro";
-import SkillList from "./utils/SkillList.astro";
 import { Image } from "astro:assets";
-import family from "../../public/family.png";
+import family from "../images/family.png";
 
 ---
 <div class="container page-sect">
 
     <SectionHeader header="Want To Hire Me?!" subHead="Contact me using the form below"/>
     <section class="contact-us">
+      <div class="cf-group">
         <form class="contact-form" name="contact" method="post" data-netlify="true" onsubmit="submit">
-            <select required id="project-type" name="project-type" class="p-picker">
-                <option value="Web Design">Web Design</option>
-                <option value="SEO">Seo</option>
-                <option value="Contract Work">Contract Work</option>
-                <option value="App Development">App Development</option>
-            </select>
-            <input required class="email-in" type="email" name="email"placeholder="Email Address"/>
-            <textarea required class="desc-area" name="message"  placeholder="Breif description of project"/>
-            <div class="btn-group">
-                <button type="reset">Reset</button>
-                <button type="submit">Submit</button>
-            </div>
-        </form>
-        <div class="img-side">
-            <Image src={family} alt="Family"/>
-        </div>
+          <select required id="project-type" name="project-type" class="p-picker">
+              <option value="Web Design">Web Design</option>
+              <option value="SEO">Seo</option>
+              <option value="Contract Work">Contract Work</option>
+              <option value="App Development">App Development</option>
+          </select>
+          <input required class="email-in" type="email" name="email"placeholder="Email Address"/>
+          <textarea required class="desc-area" name="message"  placeholder="Breif description of project"/>
+          <div class="btn-group">
+              <button type="reset">Reset</button>
+              <button type="submit">Submit</button>
+          </div>
+      </form>
+      <div class="img-side">
+          <Image src={family} alt="Family"/>
+      </div>
+      </div>
+        
     </section>
 
 </div>
@@ -34,16 +35,22 @@ import family from "../../public/family.png";
     .page-sect{
         margin-top: 2rem;
     }
+    .cf-group{
+      margin: 5rem 0;
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      gap: 2rem;
+    }
     .contact-us{
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
   align-items: start;
   flex: 1;
-  gap: 5rem;
     }
   .contact-form{
-    flex: .7;
+    flex: .5;
     display: flex;
     gap: 1em;
     flex-flow: column nowrap;
@@ -55,7 +62,7 @@ import family from "../../public/family.png";
 
     }
     .p-picker{
-      width: 75%;
+      width: 100%;
       padding: .25em 0 .25em .25em;
     }
     
@@ -76,20 +83,25 @@ import family from "../../public/family.png";
       }
   
   .img-side{
-    min-width: 25rem;
     display: flex;
     flex: .5;
+    background-attachment: fixed;
 
   }
   .img-side img{
-      width: 70%;
+    margin: auto;
+      width: 50%;
       height: auto;
     }
 
 
 
 
-    @media only screen and (max-width: 600px) {
+    @media (min-width: 0px) and (max-width: 600px) {
+      .cf-group{ 
+        flex-flow: column nowrap;
+        align-items: center;
+      }
         .contact-us{
             flex-direction: column;
         }
@@ -106,7 +118,12 @@ import family from "../../public/family.png";
             width: 100%;
             justify-content: center;
         }
-
+        input,textarea{
+            width: 100%;
+        }
+        .p-picker{
+            width: 100%;
+        }
 }
 </style>
 

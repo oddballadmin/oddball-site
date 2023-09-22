@@ -14,15 +14,17 @@ const {name, desc,link} = Astro.props;
 
 <style>
     .repo {
+        flex: 1;
         display: flex;
-        flex-direction: column;
-        border: 2.5px solid #000;
+        flex-flow: column wrap;
+        border: 3.5px solid hsl(var(--color-primary-color));
         align-items: center;
         text-align: center;
-        min-height: 30rem;
+        min-height: 25rem;
         position: relative;
-        min-width: 30rem;
+        min-width: 35rem;
         margin: 5rem 0;
+        border-radius: 0 0 2rem 2rem;
     }
     .title{
         width: 100%;
@@ -31,7 +33,7 @@ const {name, desc,link} = Astro.props;
         background-color: hsl(var(--color-primary-color));
         color: white;
         letter-spacing: .30ch;
-        font-size: clamp(1.825rem,calc(2.5vw + 1rem), 3.65rem);
+        font-size: clamp(1.825rem,calc(2.5vw + 1rem), 3rem);
 
     }
     p {
@@ -50,6 +52,12 @@ const {name, desc,link} = Astro.props;
         justify-content: center;
         top: 90%;
         margin: auto;
+    }
+    @media (min-width: 0px) and (max-width: 600px) {
+        .repo{
+            width: 100%;
+        }
+        
     }
 </style>
 

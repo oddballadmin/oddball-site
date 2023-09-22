@@ -1,7 +1,7 @@
 ---
 
 ---
-<nav>
+<nav id="nav">
 <ul>
     <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
     <li class="nav-item"><a class="nav-link" href="/portfolio">Portfolio</a></li>
@@ -25,10 +25,12 @@ nav{
     .nav-item{
       display: flex;
       padding: .25rem 2rem;
+      border-radius: 50vh;
     }
       .nav-item:hover{
         background-color: hsl(var(--color-primary-color));
         color: white;
+
         
       }
       .nav-link{
@@ -37,29 +39,46 @@ nav{
         font-family: var(--font-family-secondary-font);
         font-weight: var(--font-weight-700);
         letter-spacing: 0.20ch;
-        font-size: clamp(1.25rem, calc(1.5vw + 1rem), 1.75rem);
+        font-size: clamp(1rem, calc(1.5vw + 1rem), 1.75rem);
 
       
 }
 @media only screen and (max-width: 600px) {
+          nav{
+            width: 100%;
+            flex-flow: column nowrap;
+            display: none;
+            
+          }    
             .nav-link{
-              justify-content: end;
-              
+              white-space: nowrap;
             }
             ul{
+            flex-flow: column nowrap;
+              text-align: center;
+              width: 100%;
               gap: .1em;
+              padding-left: 0;
+              
             }
             .nav-item:last-of-type{
               margin-right: 0;
 
             }
+            .nav-item{
+              display: flex;
+              margin: 0;
+              justify-content: end;
+            border-radius: 0;
+
+            }
+            
          }
          
-         @media (min-width: 0px) and (max-width: 320px) 
+         /* @media (min-width: 0px) and (max-width: 320px) 
          {
             nav{
               width: 100%;
-              text-align: center;
               }
               nav ul{
                 width: 100%;
@@ -70,5 +89,5 @@ nav{
                 padding:0 ;
                 
               }
-}
+} */
 </style>
