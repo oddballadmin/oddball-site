@@ -2,7 +2,7 @@
 import { getCollection } from "astro:content";
 import ProjectHeader from "../utils/ProjectHeader.astro";
 import SectionHeader from "../utils/SectionHeader.astro";
-
+import { Icon } from "astro-icon";
 const allProjects = await getCollection("projects");
 
 ---
@@ -18,6 +18,18 @@ const allProjects = await getCollection("projects");
                     <li class="tag">{tag}</li>
                 ))} 
             </ul>
+            <div class="project-body">
+                <p>                
+                    {project.body}    
+                </p>
+                <div class="git-link">
+                    <a href={project.data.link}>View The Source Code</a>
+                    <Icon name="mdi:github" class="icon"/>
+                </div>
+                <a href={project.data.liveLink}>{project.data.liveLink}</a>
+                
+            
+            </div>
         ))    
         }
         
@@ -25,10 +37,52 @@ const allProjects = await getCollection("projects");
     </div>
 </div>
 <style lang="scss">
+    .git-portfolio{
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%;
+        p{
+            padding: .5rem;
+        }
+    }
     .tag-list{
         font-size: clamp(1.2rem, 2vw + 1rem, 1.5rem);
         display: flex;
         flex-flow: row wrap;
         gap: 1rem;
+        padding: 1rem ;
+        background-color: hsl(var(--color-primary-color));
+        width: 33%;
+        color: white;
+        justify-content: start;
     }
+    .git-link{
+        display: flex;
+        align-items: center;
+        height: 3.5rem;
+        line-height: 1.2;
+        align-content: center;
+        
+        .icon{
+        margin: 0 0 1rem 1rem;
+        height: 100%;
+    }
+    }
+    @media (min-width: 0px) and (max-width: 600px) {
+            .git-portfolio {
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                text-align: center ;
+            
+         }
+         .git-link{
+            justify-content: center;
+         }
+         .tag-list{
+            justify-content: center;
+            width: 75%;
+         }
+         }
 </style>

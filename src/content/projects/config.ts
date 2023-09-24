@@ -9,6 +9,7 @@ const projectCollection = defineCollection({
     tags: z.array(z.string()),
     link: z.string().url(),
     desc: z.string(),
+    liveLink: z.string().url().optional(),
   })
 })
 
