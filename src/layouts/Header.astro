@@ -10,8 +10,9 @@ import MobileMenu from "./utils/MobileMenu.astro";
     <div class="brand">
       <Image src={ brandImg } alt="Brand Logo"/>
     </div>
-    <MobileMenu/>
+    <MobileMenu client:load/>
   </div>
+
     
     <TopNavigation/>
 </header>

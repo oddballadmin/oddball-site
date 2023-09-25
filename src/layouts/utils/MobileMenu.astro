@@ -1,15 +1,10 @@
 ---
 import Icon from "astro-icon";
 ---
-<div class="mobile-menu">
-        <button id="menu-toggle"><Icon name="ion:menu"/> </button>
+<div class="mobile-menu" id="nav-btn">
+        <button id="menu-toggle"><Icon name="ion:menu"/></button>
 </div>
-<script>
-    document.getElementById("menu-toggle").addEventListener("click", function (e) {
-       e.preventDefault();
-       document.getElementById("nav").classList.toggle("active");
-    });
-</script>
+
 <style>
     button{
         display: none;
@@ -25,3 +20,9 @@ import Icon from "astro-icon";
    
     }
 </style>
+<script>
+  document.getElementById('nav-btn')?.addEventListener('click', () => {
+    document.querySelector('nav')?.classList.toggle('active');
+    console.log('clicked');
+  });
+</script>
