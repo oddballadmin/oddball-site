@@ -9,7 +9,7 @@ import family from "../images/family.png";
     <SectionHeader header="Want To Hire Me?!" subHead="Contact me using the form below"/>
     <section class="contact-us">
       <div class="cf-group">
-        <form class="contact-form" name="contact" method="post" data-netlify="true" onsubmit="submit">
+        <form class="contact-form" name="contact" method="post" data-netlify-recaptcha="true" netlify-honeypot="hpfield" data-netlify="true" onsubmit="submit">
           <select required id="project-type" name="project-type" class="p-picker">
               <option value="Web Design">Web Design</option>
               <option value="SEO">Seo</option>
@@ -17,11 +17,14 @@ import family from "../images/family.png";
               <option value="App Development">App Development</option>
           </select>
           <input required class="email-in" type="email" name="email"placeholder="Email Address"/>
+          <input class="hidden" name="hpfield"/>
           <textarea required class="desc-area" name="message"  placeholder="Brief description of project"/>
           <div class="btn-group">
               <button type="reset">Reset</button>
               <button type="submit">Submit</button>
           </div>
+          <div data-netlify-recaptcha="true"></div>
+
       </form>
       <div class="img-side">
           <Image src={family} alt="Family"/>
@@ -34,6 +37,9 @@ import family from "../images/family.png";
 <style>
     .page-sect{
         margin-top: 2rem;
+    }
+    .hidden{
+      display: none;
     }
     .cf-group{
       margin: 5rem 0;
