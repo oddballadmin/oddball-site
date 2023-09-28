@@ -1,5 +1,6 @@
 ---
-
+const joke = await fetch('https://v2.jokeapi.dev/joke/Programming?blacklistFlags=nsfw&type=single');
+const data = await joke.json();
 ---
 <footer>
     <div class="container">
@@ -8,6 +9,7 @@
             <strong>George Goldsmith - </strong> <a href="https://github.com/oddballadmin/" target="_blank">My Github</a>
         </div>
         <p>{new Date()}</p>
+        <p>{data.joke}</p>
     </div>
 </footer>
 <style lang="scss">
