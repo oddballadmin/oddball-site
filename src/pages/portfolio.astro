@@ -4,13 +4,14 @@ import Header from "../layouts/Header.astro";
 import HeadContainer from "../layouts/utils/Head-Container.astro";
 import Project from "../layouts/utils/Project.astro";
 import Footer from "../layouts/Footer.astro";
+import { fade } from 'astro:transitions';
 
 
 
 ---
 <HeadContainer title="Home">
     <body>
-    <div class="wrapper">
+    <div class="wrapper" transition:animate="slide" >
         <Header/>
         <Project />
     <Footer />

@@ -5,7 +5,7 @@ import { Image } from "astro:assets";
 import Icon from "astro-icon";
 import MobileMenu from "./utils/MobileMenu.astro";
 ---
-<header class="head">
+<header class="head" transition:animate="none">
   <div class="mobile-head">
     <div class="brand">
       <Image src={ brandImg } alt="Brand Logo"/>

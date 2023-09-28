@@ -4,7 +4,7 @@ import Header from "../layouts/Header.astro";
 import { Image } from "astro:assets";
 import Bio from "../layouts/Bio.astro";
 import Footer from "../layouts/Footer.astro";
-
+import { fade } from 'astro:transitions';
 import HeadContainer from "../layouts/utils/Head-Container.astro";
 
 
@@ -12,7 +12,7 @@ import HeadContainer from "../layouts/utils/Head-Container.astro";
 <HeadContainer title="Home">
 <body>
 
-	<div class="wrapper">
+	<div class="wrapper" transition:animate="slide">
 
 		<Header/>
 		<Bio/>
