@@ -18,16 +18,16 @@
 }
 
 .active {
-  display: block !important;
+  display: flex !important;
 }
 
 body {
-  width: 100vw;
   font-family: var(--font-family-primary-font-extended);
   position: relative;
   background-color: inherit;
   z-index: 2;
   font-size: 1.8rem;
+  max-width: 100vw;
 }
 
 body::before {

@@ -9,7 +9,7 @@ const data = await joke.json();
             <strong>George Goldsmith - </strong> <a href="https://github.com/oddballadmin/" target="_blank">My Github</a>
         </div>
         <p>{new Date()}</p>
-        <p>{data.joke}</p>
+        <p class="joke">{data.joke}</p>
     </div>
 </footer>
 <style lang="scss">
@@ -30,5 +30,11 @@ const data = await joke.json();
 
         }
         
+    }
+    .joke{
+        display: flex;
+        justify-self: center;
+        width: 80%;
+        align-self: center;
     }
 </style>

@@ -22,6 +22,13 @@ import Icon from "astro-icon";
 </style>
 <script is:inline>
   document.getElementById('nav-btn')?.addEventListener('click', () => {
+    if(!document.querySelector('nav')?.classList.contains('active')){
+      document.querySelector('nav')?.classList.add('active');
+    console.log('active added');
+
+      return;
+
+    }
     document.querySelector('nav')?.classList.toggle('active');
     console.log('clicked');
   });
