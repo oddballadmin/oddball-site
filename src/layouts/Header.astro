@@ -7,7 +7,7 @@ import MobileMenu from "./utils/MobileMenu.astro";
 <header class="head" transition:animate="none">
   <div class="mobile-head">
     <div class="brand">
-      <Image src={ brandImg } alt="Brand Logo"/>
+      <a href="/"><Image src={ brandImg } alt="Brand Logo"/></a>
     </div>
     <MobileMenu />
   </div>
@@ -16,7 +16,7 @@ import MobileMenu from "./utils/MobileMenu.astro";
     <TopNavigation/>
 </header>
 
-<style>
+<style lang="scss">
 .head{
   display: flex;
   flex-flow: row wrap;
@@ -27,12 +27,16 @@ import MobileMenu from "./utils/MobileMenu.astro";
   padding-block: 1.75rem;
   justify-content: space-between;
 }
+
 .brand{
     display: flex;
     height: clamp(3.5rem, calc(6vw + 1rem), 7.5rem);
-
-  
+    a{
+      height: 100%;
+    }
   }
+
+
   .brand img{
       width: 100%;
       height: 100%;

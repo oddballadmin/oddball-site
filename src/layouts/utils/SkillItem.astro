@@ -6,7 +6,7 @@ const { skill,desc,iconName } = Astro.props;
     <Icon name={iconName} class="icon"/>
     <div class="skill-title">{skill}</div>
 </div>
-<style>
+<style lang="scss">
     .skill-element{
         display: flex;
         flex: 1;
@@ -25,17 +25,38 @@ const { skill,desc,iconName } = Astro.props;
         position: absolute;
         top: 100%;
         text-align: center;
-        visibility: hidden;
     }
 
 
     .icon{
         height: clamp(4.5rem, calc(4vw + 1rem), 6rem);
         margin: auto;
+        margin-bottom: 1rem;
         width: auto;
-
+        &:hover{
+            scale: 2/2;
+        }
 
     }
 
+.skill-title{
+  position: relative;
+  font-family: var(--font-family-secondary-font);
+  &::after,&::before{
+    display: block;
+    content: '';
+    position: absolute;
+    height: .5rem;
+    width: 100%;
+    background-color: #17388a;
+  }
+  &::after{
+    bottom: 100%;
+
+  }
+  &::before{
+    top: 100%;
+  }
+}
 </style>
 
