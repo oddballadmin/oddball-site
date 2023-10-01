@@ -3,7 +3,8 @@ import { Icon } from "astro-icon";
 const { skill,desc,iconName } = Astro.props;
 ---
 <div class="skill-element">
-    <Icon name={iconName} class="icon"/>
+          
+    <Icon name={iconName} class="icon" viewbox="100 100 100 100"/>
     <div class="skill-title">{skill}</div>
 </div>
 <style lang="scss">
@@ -17,6 +18,9 @@ const { skill,desc,iconName } = Astro.props;
         gap: .5rem;
         position: relative;
         padding: 1.5rem;
+        max-width: 15rem;
+
+
 
     }
 
@@ -30,18 +34,20 @@ const { skill,desc,iconName } = Astro.props;
 
     .icon{
         height: clamp(4.5rem, calc(4vw + 1rem), 6rem);
-        margin: auto;
         margin-bottom: 1rem;
-        width: auto;
-        &:hover{
-            scale: 2/2;
-        }
+        
+          
 
     }
 
 .skill-title{
   position: relative;
+  display: block;
   font-family: var(--font-family-secondary-font);
+  line-height: 1;
+  width: 100%;
+  white-space: nowrap;
+  padding: 1rem 0;
   &::after,&::before{
     display: block;
     content: '';
