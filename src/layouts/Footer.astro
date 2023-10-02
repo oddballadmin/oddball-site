@@ -4,11 +4,11 @@ const data = await joke.json();
 ---
 <footer>
     <div class="container">
-        <div class="meta">
+        <section class="meta">
                     
             <strong>George Goldsmith - </strong> <a href="https://github.com/oddballadmin/" target="_blank">My Github</a>
-        </div>
-        <p>{new Date()}</p>
+        </section>
+        <p>{new Date().toLocaleDateString()}</p>
         <p class="joke">{data.joke}</p>
     </div>
 </footer>
@@ -16,6 +16,9 @@ const data = await joke.json();
     footer{
         width: 100%;
         margin-top: 10rem;
+        background-color: hsl(var(--color-primary-color));
+        color: #FFF;
+        padding: 2rem 0;
     }
     .container{
         display: flex;
@@ -27,7 +30,11 @@ const data = await joke.json();
             flex-flow: row nowrap;
             gap: 1rem;
         width: 100%;
-
+        a{
+            &:visited{
+                color: #FFF;
+            }
+        }
         }
         
     }

@@ -6,7 +6,7 @@ import { Icon } from "astro-icon";
 const allProjects = await getCollection("projects");
 
 ---
-<div class="container page-sect">
+<section class="container page-sect">
     <SectionHeader header="Some examples of my previous Work"
      subHead="Websites / Applications" />
     <div class="git-portfolio">
@@ -25,7 +25,6 @@ const allProjects = await getCollection("projects");
                 </p>
                 <div class="git-link">
                     <a href={project.data.link}>View The Source Code</a>
-                    <Icon name="mdi:github" class="icon"/>
                 </div>
                 <a href={project.data.liveLink}>{project.data.liveLink}</a>
             </div>
@@ -35,17 +34,30 @@ const allProjects = await getCollection("projects");
         
         
     </div>
-</div>
+</section>
 <style lang="scss">
     .git-portfolio{
         display: flex;
-        flex-direction: column;
+        justify-content: baseline;
+        flex-flow: row wrap;
         gap: 10rem;
         margin-top: 10rem;
         width: 100%;
-        p{
-            padding: .5rem;
-        }
+        align-content: center;
+        
+    }
+    .project{
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+        margin-right: auto;
+        height: 50%;
+        width: 55rem;
+    }
+    .project-body{
+        text-align: center;
+        margin: 1rem 0;
     }
     .tag-list{
         font-size: clamp(1.2rem, 2vw + 1rem, 1.5rem);
@@ -54,22 +66,17 @@ const allProjects = await getCollection("projects");
         gap: 1rem;
         padding: 1rem ;
         background-color: hsl(var(--color-primary-color));
-        width: 33%;
+        width: 100%;
         color: white;
-        justify-content: start;
-        margin: 2rem 0;
+        justify-content: space-evenly;
+        margin: 2rem auto;
 
     }
     .git-link{
-        display: flex;
-        align-items: center;
         height: 3.5rem;
         line-height: 1.2;
-        align-content: center;
-        .icon{
-        margin: 0 0 1rem 1rem;
-        height: 100%;
-    }
+        margin-top: 1rem;
+        
     }
     @media (min-width: 0px) and (max-width: 600px) {
             .git-portfolio {
@@ -79,6 +86,9 @@ const allProjects = await getCollection("projects");
                 text-align: center ;
             
          }
+         .project{
+            max-width: 45ch;
+         }
          .git-link{
             justify-content: center;
          }
@@ -87,4 +97,6 @@ const allProjects = await getCollection("projects");
             width: 100%;
          }
          }
+   
+
 </style>

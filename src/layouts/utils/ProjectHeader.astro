@@ -7,38 +7,30 @@ const {header, subHead} = Astro.props;
 </div>
 <style>
 .sect-heading{
-
-display: flex;
+  display: flex;
+  text-align: center;
 flex-flow: column nowrap;
 line-height: 2.5;
-margin: 0;
-padding: 1.5rem 1rem;
 width: 100%;
+align-items: center;
+justify-content: center;
 font-family: var(--font-family-primary-font-extended);
 letter-spacing: .2rem;
 background-color: hsl(var(--color-primary-color));
-  color: white;
+color: white;
+height: 22.5rem;
+padding: 0 2rem;
 }
 h3{
   line-height: 1.25;
   font-size: clamp(3rem,calc(3.25vw + 1rem), 3.75rem);
-  
-  padding: 0;
-  
-  margin: 0;
+  white-space: nowrap;
 }
 .sub-head{
   font-size: clamp(2rem,calc(2.5vw + 1rem), 3rem);
   font-family: var(--font-family-secondary-font);
   font-weight: 200;
   line-height: 1.25;
-}
-@media only screen and (max-width: 600px) {
 
-.sect-heading{
-  text-align: center;
-  padding-left: 0;
-  justify-content: center;
-}
 }
 </style>
