@@ -140,10 +140,10 @@ import SectionHeader from "./utils/SectionHeader.astro";
   padding: 1rem 1.5rem;
   border-radius: 1rem;
   box-shadow: 15px 20px 35px 17px rgba(0,0,0,0.1);
-  background-color: #17388a;
   height: auto;
+  border: hsl(var(--color-primary-color)) solid .5rem;
+  background-color: #fff;
   font-size: clamp(1rem, 1.75vw,1.75rem);
-
   
 }
   .git-link:focus{
@@ -151,11 +151,11 @@ import SectionHeader from "./utils/SectionHeader.astro";
 
   }
   a{
-    color: hsl(var(--color-accent-color));
+    color: black;
     text-decoration: none;
   }
     a:visited{
-      color: hsl(var(--color-accent-color));
+      color:black;
     }
     @media only screen and (max-width: 320px) {+
       .intro{

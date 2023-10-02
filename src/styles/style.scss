@@ -86,9 +86,12 @@ body::before{
   flex-flow: column nowrap;
 }
 .container{
+  
   width: 96%;
   align-self: center;
+  max-width: 200ch;
   margin: 0 auto;
+  
 }
 p{
   font-size: clamp(1.8rem, calc(1.5vw + 1rem),2rem);

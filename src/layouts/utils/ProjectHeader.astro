@@ -8,23 +8,23 @@ const {header, subHead} = Astro.props;
 <style>
 .sect-heading{
   display: flex;
-  text-align: center;
+  text-align: left;
 flex-flow: column nowrap;
 line-height: 2.5;
 width: 100%;
-align-items: center;
 justify-content: center;
 font-family: var(--font-family-primary-font-extended);
 letter-spacing: .2rem;
 background-color: hsl(var(--color-primary-color));
 color: white;
-height: 22.5rem;
+height: 20rem;
 padding: 0 2rem;
 }
 h3{
   line-height: 1.25;
   font-size: clamp(3rem,calc(3.25vw + 1rem), 3.75rem);
   white-space: nowrap;
+  text-align: left;
 }
 .sub-head{
   font-size: clamp(2rem,calc(2.5vw + 1rem), 3rem);

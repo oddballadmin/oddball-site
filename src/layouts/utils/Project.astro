@@ -42,7 +42,7 @@ const allProjects = await getCollection("projects");
         flex-flow: row wrap;
         gap: 10rem;
         width: 100%;
-        align-content: center;
+        align-content: left;
         
     }
     .project{
@@ -53,9 +53,12 @@ const allProjects = await getCollection("projects");
         margin-right: auto;
         height: 50%;
         width: 55rem;
+        position: relative;
+        border-radius: 1rem;
+        isolation: isolate;
     }
     .project-body{
-        text-align: center;
+        text-align: left;
         margin: 1rem 0;
     }
     .tag-list{
@@ -63,11 +66,11 @@ const allProjects = await getCollection("projects");
         display: flex;
         flex-flow: row wrap;
         gap: 1rem;
-        padding: 1rem ;
+        padding: 1rem;
         background-color: hsl(var(--color-primary-color));
         width: 100%;
         color: white;
-        justify-content: space-evenly;
+        justify-content: space-around;
         margin: 2rem auto;
 
     }

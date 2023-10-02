@@ -51,35 +51,13 @@ body::before {
 .container {
   width: 96%;
   align-self: center;
+  max-width: 200ch;
   margin: 0 auto;
 }
 
 p {
   font-size: clamp(1.8rem, 1.5vw + 1rem, 2rem);
   line-height: 2;
-}
-
-.skill-element:hover .skill-title {
-  visibility: visible;
-}
-
-.skill-title {
-  position: relative;
-  font-family: var(--font-family-secondary-font);
-}
-.skill-title::after, .skill-title::before {
-  display: block;
-  content: "";
-  position: absolute;
-  height: 0.5rem;
-  width: 100%;
-  background-color: #17388a;
-}
-.skill-title::after {
-  bottom: 100%;
-}
-.skill-title::before {
-  top: 100%;
 }
 
 .page-sect {
