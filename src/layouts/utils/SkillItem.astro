@@ -4,7 +4,7 @@ const { skill,desc,iconName } = Astro.props;
 ---
 <div class="skill-element">
           
-    <Icon name={iconName} class="icon" viewbox="100 100 100 100"/>
+    <Icon aria-label={skill} name={iconName} class="icon" viewbox="100 100 100 100"/>
     <div class="skill-title">{skill}</div>
 </div>
 <style lang="scss">
