@@ -44,7 +44,6 @@ import SectionHeader from "./utils/SectionHeader.astro";
 
       </ul>
     </section>
-    <SectionHeader header="Some Skills I Have Gathered Throughout My Studies" subHead="Software / Web Development"/>
 
     <SkillList>
         <SkillItem skill="HTML" iconName="vscode-icons:file-type-html"/>
@@ -143,9 +142,10 @@ import SectionHeader from "./utils/SectionHeader.astro";
   font-weight: 500;
   font-family: var(--font-family-secondary-font);
   position: relative;
-
+  backdrop-filter: blur(2rem);
+  padding: 0 2.5rem;
   &:hover{
-    padding: 0 3rem;
+    padding: 0 3.5rem;
     
 
   }

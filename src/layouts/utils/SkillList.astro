@@ -1,18 +1,17 @@
 ---
+import SectionHeader from "../utils/SectionHeader.astro";
 
 ---
 <section class="skill-list">
-
+    <SectionHeader header="Some Skills I Have Gathered Throughout My Studies" subHead="Software / Web Development"/>
     <slot/>
 </section>
 <style>
     .skill-list{
         display: flex;
         flex-flow: row wrap;
+        min-height: 20rem;
         row-gap: 5.5rem;
-        height: auto;
         width: 100%;
-        justify-content: first baseline;
-
     }
 </style>

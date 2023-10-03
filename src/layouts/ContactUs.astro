@@ -6,7 +6,7 @@ import family from "../images/family.png";
 ---
 <div class="container page-sect">
 
-    <main class="contact-us">
+    <section class="contact-us">
     <SectionHeader header="Want To Hire Me?!" subHead="Contact me using the form below"/>
         <form class="contact-form" name="contact" method="post" data-netlify-recaptcha="true" netlify-honeypot="hpfield" data-netlify="true" onsubmit="submit">
           <select required id="project-type" name="project-type" class="p-picker">
@@ -24,24 +24,25 @@ import family from "../images/family.png";
           </div>
           <div data-netlify-recaptcha="true"></div>
       </form>      
-    </main>
+    </section>
 </div>
 <style lang="scss">
     .page-sect{
         margin-top: 2rem;
     }
-    main{
-      display: flex;
-      height: 100%;
-      width: 100%;
-      flex-flow: row wrap;
+    .container{
+      justify-content: start;
     }
     .hidden{
       display: none;
     }
     .contact-us{
-
+      display: flex;
+      height: 100%;
+      width: 100%;
+      flex-flow: column nowrap;
       width: 50%;
+      align-self: flex-start;
     }
   .contact-form{
     display: flex;
@@ -54,6 +55,8 @@ import family from "../images/family.png";
   }
    .contact-form input,select,button,textarea{
       box-shadow: .015em .055em .055em .035em rgba(0,0,0,0.2);
+      border: 1px solid hsl(var(--color-primary-color));
+      padding: 0 1rem;
 
     }
     .p-picker{
@@ -62,19 +65,21 @@ import family from "../images/family.png";
     }
     
     .desc-area{
-      height: 40%;
+      height: 20vh;
       resize: none !important;
 
     }
     .btn-group{
-      font-size: clamp(1rem,calc(1vw + 1rem),3rem);
+
       display: flex;
       flex-flow: row nowrap;
       gap: 5rem;
     
     }
     .btn-group button{
-        padding: 0 1em;
+    font-size: clamp(1em,calc(vw + 1rem),2em);
+
+        padding: 1rem;
         background-color: hsl(var(--color-primary-color));
         color: #FFF;
       }

@@ -38,6 +38,7 @@ body::before {
   width: 100%;
   z-index: -1;
   background-image: url("../images/background.jpg");
+  opacity: 0.45;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -51,6 +52,8 @@ body::before {
 .container {
   width: 96%;
   align-self: center;
+  justify-content: center;
+  align-items: center;
   max-width: 200ch;
   margin: 0 auto;
 }
