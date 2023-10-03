@@ -6,9 +6,8 @@ import family from "../images/family.png";
 ---
 <div class="container page-sect">
 
+    <main class="contact-us">
     <SectionHeader header="Want To Hire Me?!" subHead="Contact me using the form below"/>
-    <section class="contact-us">
-      <div class="cf-group">
         <form class="contact-form" name="contact" method="post" data-netlify-recaptcha="true" netlify-honeypot="hpfield" data-netlify="true" onsubmit="submit">
           <select required id="project-type" name="project-type" class="p-picker">
               <option value="Web Design">Web Design</option>
@@ -24,45 +23,37 @@ import family from "../images/family.png";
               <button type="submit">Submit</button>
           </div>
           <div data-netlify-recaptcha="true"></div>
-
-      </form>
-      <div class="img-side">
-          <Image src={family} alt="Family"/>
-      </div>
-      </div>
-        
-    </section>
-
+      </form>      
+    </main>
 </div>
-<style>
+<style lang="scss">
     .page-sect{
         margin-top: 2rem;
+    }
+    main{
+      display: flex;
+      height: 100%;
+      width: 100%;
+      flex-flow: row wrap;
     }
     .hidden{
       display: none;
     }
-    .cf-group{
-      display: flex;
-      flex-flow: row nowrap;
-      align-items: center;
-      gap: 2rem;
-    }
     .contact-us{
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: start;
-  flex: 1;
+
+      width: 50%;
     }
   .contact-form{
-    flex: .5;
     display: flex;
     gap: 1em;
     flex-flow: column nowrap;
     font-size: clamp(1.5rem,calc(3vw + 1rem),2.5rem);
     height: 100%;
+    align-self: baseline;
+    width: 100%;
   }
    .contact-form input,select,button,textarea{
-      box-shadow: 1px 5px 5px 3px rgba(0,0,0,0.2);
+      box-shadow: .015em .055em .055em .035em rgba(0,0,0,0.2);
 
     }
     .p-picker{
@@ -84,29 +75,19 @@ import family from "../images/family.png";
     }
     .btn-group button{
         padding: 0 1em;
+        background-color: hsl(var(--color-primary-color));
+        color: #FFF;
       }
-  
-  .img-side{
-    display: flex;
-    flex: .5;
-    background-attachment: fixed;
+      
 
-  }
-  .img-side img{
-    margin: auto;
-      width: 50%;
-      height: auto;
-    }
 
 
 
 
     @media (min-width: 0px) and (max-width: 600px) {
-      .cf-group{ 
-        flex-flow: column nowrap;
-        align-items: center;
-      }
+     
         .contact-us{
+          width: 100%;
             flex-direction: column;
         }
         .contact-form{
@@ -118,10 +99,7 @@ import family from "../images/family.png";
             align-items: center;
             justify-content: center;
         }
-        .img-side{
-            width: 100%;
-            justify-content: center;
-        }
+       
         input,textarea{
             width: 100%;
         }
