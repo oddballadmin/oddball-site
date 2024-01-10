@@ -15,7 +15,7 @@ import SectionHeader from "./utils/SectionHeader.astro";
             <br>AS Information Systems Technology
         </p>
     </section>   
-            <a class="git-link"href="https://github.com/oddballadmin/" target="_blank">View My Github Repo</a>
+            <a class="git-link"href="https://github.com/oddballadmin/" target="_blank"><button class="no-style">View My Github Repo</button></a>
 </section>
 <main class="container page-sect">
 
@@ -61,7 +61,9 @@ import SectionHeader from "./utils/SectionHeader.astro";
     </SkillList>
   </main>
 <style lang="scss">
-
+.no-style{
+  all:unset
+}
 .container{
   flex-flow: row wrap;
   justify-content: space-between;
@@ -142,13 +144,8 @@ import SectionHeader from "./utils/SectionHeader.astro";
   font-weight: 500;
   font-family: var(--font-family-secondary-font);
   position: relative;
-  backdrop-filter: blur(2rem);
   padding: 0 2.5rem;
-  &:hover{
-    padding: 0 3.5rem;
-    
-
-  }
+  
   &::after{
     content: '';
     display: block;
