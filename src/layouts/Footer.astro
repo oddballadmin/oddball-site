@@ -1,17 +1,72 @@
 ---
-const joke = await fetch('https://v2.jokeapi.dev/joke/Programming?blacklistFlags=nsfw&type=single');
-const data = await joke.json();
+// const joke = await fetch('https://v2.jokeapi.dev/joke/Programming?blacklistFlags=nsfw&type=single');
+// const data = await joke.json();
+
+
+
+
 ---
 <footer>
     <div class="container">
         <section class="meta">
-                    
             <strong>George Goldsmith - </strong> <a href="https://github.com/oddballadmin/" target="_blank">My Github</a>
         </section>
         <p>{new Date().toLocaleDateString()}</p>
-        <p class="joke">{data.joke}</p>
+        <p id="joke"></p>
     </div>
 </footer>
+
+<script >
+    interface JokeResponse {
+        error: boolean;
+        category: string;
+        type: string;
+        joke?: string;
+        setup?: string;
+        delivery?: string;
+        // Add other fields as per the API response
+    }
+    const fetchJoke = async (): Promise<string> => {
+    try {
+        const response = await fetch('https://v2.jokeapi.dev/joke/Programming');
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+
+        const data: JokeResponse = await response.json();
+
+        if (!data || typeof data !== 'object' || (!data.joke && (!data.setup || !data.delivery))) {
+            throw new Error('Invalid JSON structure');
+        }
+
+        if (data.type === 'single') {
+            return data.joke || 'No joke found.';
+        } else {
+            return `${data.setup} - ${data.delivery}`;
+        }
+    } catch (error) {
+        console.error('Failed to fetch the joke:', error);
+        return 'Failed to fetch joke.';
+    }
+    
+};
+
+    // Since this script is client-side, we can directly check for the element
+    const jokeElement = document.getElementById('joke');
+    if (jokeElement) {
+        fetchJoke().then(jokeText => {
+            jokeElement.textContent = jokeText;
+        }).catch(error => {
+            console.error('Failed to fetch the joke:', error);
+        });
+    } else {
+        console.error('The joke element was not found in the document.');
+    }
+</script>
+
+
+
 <style lang="scss">
     footer{
         display: flex;
