@@ -4,101 +4,100 @@ import ProjectHeader from "../utils/ProjectHeader.astro";
 import SectionHeader from "../utils/SectionHeader.astro";
 import { Icon } from "astro-icon";
 const allProjects = await getCollection("projects");
-
 ---
+
 <section class="container page-sect">
-    <SectionHeader header="Some examples of my previous Work"
-     subHead="Websites / Applications" />
-    <div class="git-portfolio">
-        {
-        allProjects.map((project)=>(
-            <div class="project">
-            <ProjectHeader header={project.data.title} subHead={project.data.desc}/>
-            <ul class="tag-list">
-                {project.data.tags.map((tag: string)=>(
-                    <li class="tag">{tag}</li>
-                ))} 
-            </ul>
-            <div class="project-body">
-                <p>                
-                    {project.body}    
-                </p>
-                <div class="git-link">
-                    <a href={project.data.link}>View The Source Code</a>
-                </div>
-                <a href={project.data.liveLink}>{project.data.liveLink}</a>
-            </div>
-        </div>
-        ))    
-        }
-        
-        
-    </div>
+	<SectionHeader
+		header="Some examples of my previous Work"
+		subHead="Websites / Applications"
+	/>
+	<div class="git-portfolio">
+		{
+			allProjects.map((project) => (
+				<div class="project">
+					<ProjectHeader
+						header={project.data.title}
+						subHead={project.data.desc}
+					/>
+					<ul class="tag-list">
+						{project.data.tags.map((tag: string) => (
+							<li class="tag">{tag}</li>
+						))}
+					</ul>
+					<div class="project-body">
+						<p>{project.body}</p>
+						<div class="git-link">
+							<a href={project.data.link} target="_blank">
+								View The Source Code
+							</a>
+						</div>
+						<a href={project.data.liveLink} target="_blank">
+							{project.data.liveLink}
+						</a>
+					</div>
+				</div>
+			))
+		}
+	</div>
 </section>
 <style lang="scss">
-    .git-portfolio{
-        display: flex;
-        justify-content: center;
-        flex-flow: row wrap;
-        width: 100%;
-        align-content: center;
-        
-    }
-    .project{
-        display: flex;
-        flex-flow: column wrap;
-        justify-content: center;
-        align-items: center;
-        height: 50%;
-        width: 55rem;
-        position: relative;
-        border-radius: 1rem;
-        isolation: isolate;
-    }
-    .project-body{
-        text-align: left;
-        margin: 1rem 0;
-    }
-    .tag-list{
-        font-size: clamp(1.2rem, 2vw + 1rem, 1.5rem);
-        display: flex;
-        flex-flow: row wrap;
-        gap: 1rem;
-        padding: 1rem;
-        background-color: hsl(var(--color-primary-color));
-        width: 100%;
-        color: white;
-        justify-content: space-around;
-        margin: 2rem auto;
-
-    }
-    .git-link{
-        height: 3.5rem;
-        line-height: 1.2;
-        margin-top: 1rem;
-        
-    }
-    @media (min-width: 0px) and (max-width: 600px) {
-            .git-portfolio {
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                text-align: center ;
-            
-         }
-         .project{
-            max-width: 45ch;
-            width: 98%;
-            margin: 0 auto;
-         }
-         .git-link{
-            justify-content: center;
-         }
-         .tag-list{
-            justify-content: center;
-            width: 100%;
-         }
-         }
-   
-
+	.git-portfolio {
+		display: flex;
+		justify-content: center;
+		flex-flow: row wrap;
+		width: 100%;
+		align-content: center;
+	}
+	.project {
+		display: flex;
+		flex-flow: column wrap;
+		justify-content: center;
+		align-items: center;
+		height: 50%;
+		width: 55rem;
+		position: relative;
+		border-radius: 1rem;
+		isolation: isolate;
+	}
+	.project-body {
+		text-align: left;
+		margin: 1rem 0;
+	}
+	.tag-list {
+		font-size: clamp(1.2rem, 2vw + 1rem, 1.5rem);
+		display: flex;
+		flex-flow: row wrap;
+		gap: 1rem;
+		padding: 1rem;
+		background-color: hsl(var(--color-primary-color));
+		width: 100%;
+		color: white;
+		justify-content: space-around;
+		margin: 2rem auto;
+	}
+	.git-link {
+		height: 3.5rem;
+		line-height: 1.2;
+		margin-top: 1rem;
+	}
+	@media (min-width: 0px) and (max-width: 600px) {
+		.git-portfolio {
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			text-align: center;
+		}
+		.project {
+			max-width: 45ch;
+			width: 98%;
+			margin: 0 auto;
+		}
+		.git-link {
+			justify-content: center;
+		}
+		.tag-list {
+			justify-content: center;
+			width: 100%;
+		}
+	}
 </style>
