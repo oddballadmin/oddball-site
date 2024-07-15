@@ -13,30 +13,32 @@ const allProjects = await getCollection("projects");
 	/>
 	<div class="git-portfolio">
 		{
-			allProjects.map((project) => (
-				<div class="project">
-					<ProjectHeader
-						header={project.data.title}
-						subHead={project.data.desc}
-					/>
-					<ul class="tag-list">
-						{project.data.tags.map((tag: string) => (
-							<li class="tag">{tag}</li>
-						))}
-					</ul>
-					<div class="project-body">
-						<p>{project.body}</p>
-						<div class="git-link">
-							<a href={project.data.link} target="_blank">
-								View The Source Code
+			allProjects
+				.sort((a, b) => a.data.order - b.data.order)
+				.map((project) => (
+					<div class="project">
+						<ProjectHeader
+							header={project.data.title}
+							subHead={project.data.desc}
+						/>
+						<ul class="tag-list">
+							{project.data.tags.map((tag: string) => (
+								<li class="tag">{tag}</li>
+							))}
+						</ul>
+						<div class="project-body">
+							<p>{project.body}</p>
+							<div class="git-link">
+								<a href={project.data.link} target="_blank">
+									View The Source Code
+								</a>
+							</div>
+							<a href={project.data.liveLink} target="_blank">
+								{project.data.liveLink}
 							</a>
 						</div>
-						<a href={project.data.liveLink} target="_blank">
-							{project.data.liveLink}
-						</a>
 					</div>
-				</div>
-			))
+				))
 		}
 	</div>
 </section>

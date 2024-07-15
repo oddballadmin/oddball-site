@@ -4,176 +4,176 @@ import devImg from "../images/developer.svg";
 import SkillItem from "./utils/SkillItem.astro";
 import SkillList from "./utils/SkillList.astro";
 import SectionHeader from "./utils/SectionHeader.astro";
-
 ---
-<section class="intro">
-    <Image src={devImg} alt="dev at work" class="dev-bg"/>
 
-    <section class="info">
-        <h1>George Goldsmith</h1>
-        <p>Web / Software developer (Frontend)
-            <br>AS Information Systems Technology
-        </p>
-    </section>   
-            <a class="git-link"href="https://github.com/oddballadmin/" target="_blank"><button class="no-style">View My Github Repo</button></a>
+<section class="intro">
+	<Image src={devImg} alt="dev at work" class="dev-bg" />
+
+	<section class="info">
+		<h1>George Goldsmith</h1>
+		<p>
+			Web / Software developer (Frontend)
+			<br />BS Information Systems Technology
+		</p>
+	</section>
+	<a class="git-link" href="https://github.com/oddballadmin/" target="_blank"
+		><button class="no-style">View My Github Repo</button></a
+	>
 </section>
 <main class="container page-sect">
+	<article class="excerpt">
+		<SectionHeader header="A Little About Me" subHead="My skills and hobbies" />
+		<p>
+			Hello! My name is George Goldsmith. I am a front end web developer with a
+			passion for creating easy to use and pleasent looking user interfaces. I
+			primarily utilize React and Astro for any projects I work on. I also have
+			experience with Wordpress and PHP. I am a graduate of Liberty University
+			with a degree in Information Systems Technology. I am always looking to
+			learn new things and improve my skills. I am also a huge fan of video
+			games and enjoy playing them in my free time. I am always looking for new
+			projects to work on and new people to work with. Feel free to reach out to
+			me if you have any questions or would like to work together.
+		</p>
+	</article>
+	<section class="soft-skills">
+		<SectionHeader
+			header="Soft Skills"
+			subHead="Traits and Attributes I've obtained from my work experience"
+		/>
 
-  
-  <article class="excerpt">
-      <SectionHeader header="A Little About Me" subHead="My skills and hobbies"/>
-        <p>Hello! My name is George Goldsmith, I am a web developer and current employee of a local college.
-            I have been with the college for over a year now with the Admissions team and thouroghly enjoy my time there.
-            I currently hold an Associates In Applied Science(Information Systems Technology) and am on track to finish my
-            bachelors by early 2024.
-            I love web development and have been doing it for over 3 years now. I have experience with technologies such as HTML, CSS, JS, PHP, NodeJS, and Java.
-            I love to learn and am always looking to learn new things and am currently learning ReactJS and NextJS.       
-            I have held several jobs and have gained many skills from them. I have worked in the food industry, retail, and customer service, which has helped me gain many skills that are useful for every field.
-          </p>
-    
-    </article>
-    <section class="soft-skills">
-      <SectionHeader header="Soft Skills" subHead="Traits and Attributes I've obtained from my work experience"/>
+		<ul>
+			<li>Team Management</li>
+			<li>Quick Learning and implementation</li>
+			<li>Customer Service</li>
+			<li>Hard Work and Dedication</li>
+			<li>Adaptability</li>
+		</ul>
+	</section>
 
-      <ul>
-          <li>Team Management</li>
-          <li>Quick Learning and implementation</li>
-          <li>Customer Service</li>
-          <li>Hard Work and Dedication</li>
-          <li>Adaptability</li>
-
-      </ul>
-    </section>
-
-    <SkillList>
-        <SkillItem skill="HTML" iconName="vscode-icons:file-type-html"/>
-        <SkillItem skill="JS" iconName="vscode-icons:file-type-light-js"/>
-        <SkillItem skill="CSS" iconName="vscode-icons:file-type-css"/>
-        <SkillItem skill="Astro" iconName="vscode-icons:file-type-astro"/>
-        <SkillItem skill="Wordpress" iconName="brandico:wordpress"/>
-        <SkillItem skill="Java" iconName="logos:java"/>
-        <SkillItem skill="MySQL" iconName="logos:mysql"/>
-        <SkillItem skill="NodeJS" iconName="logos:nodejs"/>
-        <SkillItem skill="PHP" iconName="logos:php"/>
-        <SkillItem skill="API Integration" iconName="logos:postman-icon"/>
-        <SkillItem skill="SCSS/SASS" iconName="vscode-icons:file-type-scss2"/>
-        <SkillItem skill="Markdown" iconName="ion:logo-markdown"/>
-    </SkillList>
-  </main>
+	<SkillList>
+		<SkillItem skill="HTML" iconName="vscode-icons:file-type-html" />
+		<SkillItem skill="JS" iconName="vscode-icons:file-type-light-js" />
+		<SkillItem skill="CSS" iconName="vscode-icons:file-type-css" />
+		<SkillItem skill="Astro" iconName="vscode-icons:file-type-astro" />
+		<SkillItem skill="Wordpress" iconName="brandico:wordpress" />
+		<SkillItem skill="React" iconName="logos:react" />
+		<SkillItem skill="MySQL" iconName="logos:mysql" />
+		<SkillItem skill="NodeJS" iconName="logos:nodejs" />
+		<SkillItem skill="PHP" iconName="logos:php" />
+		<SkillItem skill="API Integration" iconName="logos:postman-icon" />
+		<SkillItem skill="SCSS/SASS" iconName="vscode-icons:file-type-scss2" />
+		<SkillItem skill="Markdown" iconName="ion:logo-markdown" />
+	</SkillList>
+</main>
 <style lang="scss">
-.no-style{
-  all:unset
-}
-.container{
-  flex-flow: row wrap;
-  justify-content: space-between;
-}
-    .about-me{
-        margin-top: 1rem;
-    }
-    ul{
-        width: auto;
-        border: #17388a .25em solid;
-        padding: 1em 2em;
-        
-    }
+	.no-style {
+		all: unset;
+	}
+	.container {
+		flex-flow: row wrap;
+		justify-content: space-between;
+	}
+	.about-me {
+		margin-top: 1rem;
+	}
+	ul {
+		width: auto;
+		border: #17388a 0.25em solid;
+		padding: 1em 2em;
+	}
 
-    li{
-        padding: .5rem;
-    }
-.excerpt{
-  max-width: 75ch;
-}
-.intro {
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
-  justify-content: center;
-  min-height: 85vh;
-  width: 100%;
-  position: relative;
-}
-  .intro .dev-bg {
-    position: absolute;
-    display: block;
-    align-self: center;
-    z-index: -1;
-    opacity: .25;
-    width: 85%;
-    height: 85%;
-  }
+	li {
+		padding: 0.5rem;
+	}
+	.excerpt {
+		max-width: 75ch;
+	}
+	.intro {
+		display: flex;
+		flex-flow: column nowrap;
+		align-items: center;
+		justify-content: center;
+		min-height: 85vh;
+		width: 100%;
+		position: relative;
+	}
+	.intro .dev-bg {
+		position: absolute;
+		display: block;
+		align-self: center;
+		z-index: -1;
+		opacity: 0.25;
+		width: 85%;
+		height: 85%;
+	}
 
+	.info {
+		display: flex;
+		flex-flow: column;
+		width: 100%;
+		justify-content: center;
+		text-align: center;
+	}
+	.info h1 {
+		align-self: center;
+		justify-content: center;
+		font-size: clamp(3rem, 8.75vw, 8.75rem);
+		font-family: var(--font-family-secondary-font);
+		white-space: nowrap;
+		letter-spacing: 0.5rem;
+		font-weight: 500;
+		position: relative;
+	}
 
-  .info {
-    display: flex;
-    flex-flow: column;
-    width: 100%;
-    justify-content: center;
-    text-align: center;
-  }
-   .info h1{
-      align-self: center;
-      justify-content: center;
-      font-size: clamp(3rem,8.75vw, 8.75rem);
-      font-family: var(--font-family-secondary-font);
-      white-space: nowrap;
-      letter-spacing: .5rem;
-      font-weight: 500;
-      position: relative;
-    }
-    
-    .info p{
-      align-self: center;
-      justify-content: center;
-      line-height: 1.5;
-      font-size: clamp(1.75rem,3vw, 3rem);
-      font-family: var(--font-family-primary-font-extended);
-      font-weight: 400;
-      white-space: nowrap;
-      margin: 0 15rem;
-    }
-    .soft-skills{
-      width: auto;
-    }
-    
-  
-.git-link{
-  margin: 1rem auto;
-  height: auto;
-  font-size: clamp(1.25rem, calc(2vw + 1rem),2rem);
-  font-weight: 500;
-  font-family: var(--font-family-secondary-font);
-  position: relative;
-  padding: 0 2.5rem;
-  
-  &::after{
-    content: '';
-    display: block;
-    position: absolute;
-    margin-top: .5rem;
-    background-color: hsl(var(--color-primary-color));
-    height: .5rem;
+	.info p {
+		align-self: center;
+		justify-content: center;
+		line-height: 1.5;
+		font-size: clamp(1.75rem, 3vw, 3rem);
+		font-family: var(--font-family-primary-font-extended);
+		font-weight: 400;
+		white-space: nowrap;
+		margin: 0 15rem;
+	}
+	.soft-skills {
+		width: auto;
+	}
 
-    width: 100%;
-    left: 0;
-  }
-}
-  .git-link:focus{
-    box-shadow: 0 0 0 0 rgba(0,0,0,0.4);
+	.git-link {
+		margin: 1rem auto;
+		height: auto;
+		font-size: clamp(1.25rem, calc(2vw + 1rem), 2rem);
+		font-weight: 500;
+		font-family: var(--font-family-secondary-font);
+		position: relative;
+		padding: 0 2.5rem;
 
-  }
-  a{
-    color: black;
-    text-decoration: none;
-  }
-    a:visited{
-      color:black;
-    }
-    @media only screen and (max-width: 320px) {
-      .intro{
-        text-align: center;
-        width: 100%;
-      }
-      
-      }
+		&::after {
+			content: "";
+			display: block;
+			position: absolute;
+			margin-top: 0.5rem;
+			background-color: hsl(var(--color-primary-color));
+			height: 0.5rem;
+
+			width: 100%;
+			left: 0;
+		}
+	}
+	.git-link:focus {
+		box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.4);
+	}
+	a {
+		color: black;
+		text-decoration: none;
+	}
+	a:visited {
+		color: black;
+	}
+	@media only screen and (max-width: 320px) {
+		.intro {
+			text-align: center;
+			width: 100%;
+		}
+	}
 </style>
